@@ -1,2 +1,2 @@
 # Pool-configurator
-standalone pool configurator
+stand alone pool configurator work for zepcom
