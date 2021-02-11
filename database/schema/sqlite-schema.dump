@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS "migrations" ("id" integer not null primary key autoincrement, "migration" varchar not null, "batch" integer not null);
+CREATE TABLE IF NOT EXISTS "users" ("id" integer not null primary key autoincrement, "name" varchar not null, "email" varchar not null, "email_verified_at" datetime, "password" varchar not null, "remember_token" varchar, "created_at" datetime, "updated_at" datetime);
+CREATE UNIQUE INDEX "users_email_unique" on "users" ("email");
+CREATE TABLE IF NOT EXISTS "password_resets" ("email" varchar not null, "token" varchar not null, "created_at" datetime);
+CREATE INDEX "password_resets_email_index" on "password_resets" ("email");
+CREATE TABLE IF NOT EXISTS "failed_jobs" ("id" integer not null primary key autoincrement, "uuid" varchar not null, "connection" text not null, "queue" text not null, "payload" text not null, "exception" text not null, "failed_at" datetime default CURRENT_TIMESTAMP not null);
+CREATE UNIQUE INDEX "failed_jobs_uuid_unique" on "failed_jobs" ("uuid");
+CREATE TABLE IF NOT EXISTS "products" ("id" integer not null primary key autoincrement, "created_at" datetime, "updated_at" datetime);
+INSERT INTO migrations VALUES(1,'2014_10_12_000000_create_users_table',1);
+INSERT INTO migrations VALUES(2,'2014_10_12_100000_create_password_resets_table',1);
+INSERT INTO migrations VALUES(3,'2019_08_19_000000_create_failed_jobs_table',1);
+INSERT INTO migrations VALUES(4,'2021_01_19_085927_create_tests_table',1);
+INSERT INTO migrations VALUES(5,'2021_01_19_090043_tests',1);
+INSERT INTO migrations VALUES(6,'2021_01_25_091305_create_product_table',2);
+INSERT INTO migrations VALUES(7,'2021_01_25_124114_create_products_table',3);
+INSERT INTO migrations VALUES(8,'2021_01_26_121234_create_products_table',4);
+INSERT INTO migrations VALUES(9,'2021_01_26_122357_create_products_table',5);
