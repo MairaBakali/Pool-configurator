@@ -42,9 +42,7 @@
                 >
                 <v-spacer></v-spacer>
                 <v-btn
-                  @click="
-                    component = 'gardensize';
-                    show = !show;
+                  @click="show = !show;
                   "
                   depressed
                   color="#EFEFEF"
@@ -68,7 +66,7 @@
               :color="cardstyle.color"
             >
               <v-card-actions>
-                <v-card-text @click="showsize = !showsize"
+                <v-card-text @click="component = 'gardensize';showsize = !showsize"
                   >GRUNDFLÄCHE BESTIMMEN</v-card-text
                 >
                 <v-spacer></v-spacer>
@@ -125,10 +123,9 @@
               </div>
             </v-expand-transition>
           </div>
-          <v-col class="item">
+          <div class="item">
             <component :is="component"></component>
-            
-          </v-col>
+          </div>
         </v-row>
       </div>
     </v-main>
