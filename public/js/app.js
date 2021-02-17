@@ -1971,7 +1971,9 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
   },
   methods: {
     disabledbutton: function disabledbutton() {
-      if (this.pool.length > 0) {
+      this.enabled = false;
+
+      if (this.pool) {
         return this.enabled = true;
       }
     },
@@ -2168,7 +2170,9 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
   },
   methods: {
     disabledbutton: function disabledbutton() {
-      if (this.pool.length > 0) {
+      this.enabled = false;
+
+      if (this.pool) {
         return this.enabled = true;
       }
     },
@@ -2203,6 +2207,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
+//
 //
 //
 //
@@ -2535,10 +2540,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.vue */ "./resources/js/views/main.vue");
-/* harmony import */ var _components_myheader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/myheader.vue */ "./resources/js/components/myheader.vue");
-/* harmony import */ var _components_gardensize_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/gardensize.vue */ "./resources/js/components/gardensize.vue");
-/* harmony import */ var _components_budget_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/budget.vue */ "./resources/js/components/budget.vue");
+/* harmony import */ var _components_myheader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/myheader.vue */ "./resources/js/components/myheader.vue");
+/* harmony import */ var _components_gardensize_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/gardensize.vue */ "./resources/js/components/gardensize.vue");
+/* harmony import */ var _components_budget_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/budget.vue */ "./resources/js/components/budget.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2684,13 +2775,253 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 
 
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      products: [],
+      productsaccessories: [],
+      pool: "",
+      accessories: "",
+      e6: 1,
+      show: false,
+      enabled: false,
+      budgetcomplete: false,
+      step2complete: false,
+      showsize: false,
+      showpool: false,
+      toggle_exclusive: undefined,
+      cardstyle: {
+        activecolor: "blue",
+        color: "#EFEFEF",
+        wdth: "40vw",
+        ht: "8.4vh"
+      }
+    };
+  },
+  methods: {
+    homepage: function homepage() {
+      this.$router.push("/home");
+    },
+    disabledbutton: function disabledbutton() {
+      this.enabled = false;
+
+      if (this.pool) {
+        return this.enabled = true;
+      }
+    },
+    disabledbutton2: function disabledbutton2() {
+      this.enabled = false;
+
+      if (this.accessories) {
+        return this.enabled = true;
+      }
+    },
+    checkinput: function checkinput() {
+      if (this.pool) {
+        console.log(this.pool);
+      }
+    },
+    getProducts: function getProducts() {
+      var _this = this;
+
+      axios.get("./api/products").then(function (response) {
+        _this.products = response.data;
+      });
+    },
+    getProductsaceesories: function getProductsaceesories() {
+      var _this2 = this;
+
+      axios.get("./api/product/accessories").then(function (response) {
+        _this2.productsaccessories = response.data;
+      });
+    },
+    enablelaststep: function enablelaststep() {
+      return this.step2complete = true;
+    },
+    enablesecondstep: function enablesecondstep() {
+      return this.budgetcomplete = true;
+    },
+    alertfunc: function alertfunc() {
+      alert("Items selected successfully");
+    }
+  },
+  mounted: function mounted() {
+    this.getProducts();
+    this.getProductsaceesories();
+  },
+  components: {
+    gardensize: _components_gardensize_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+    myheader: _components_myheader_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    budget: _components_budget_vue__WEBPACK_IMPORTED_MODULE_2__.default
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/main.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/main.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _components_myheader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/myheader.vue */ "./resources/js/components/myheader.vue");
+/* harmony import */ var _components_gardensize_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/gardensize.vue */ "./resources/js/components/gardensize.vue");
+/* harmony import */ var _components_budget_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/budget.vue */ "./resources/js/components/budget.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       products: [],
       pool: "",
-      e6: 1,
+      e3: 1,
       show: false,
       enabled: false,
       showsize: false,
@@ -2698,7 +3029,7 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
       toggle_exclusive: undefined,
       cardstyle: {
         color: "#EFEFEF",
-        wdth: "40vw",
+        wdth: "30vw",
         ht: "8.4vh"
       }
     };
@@ -2731,81 +3062,9 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
     this.getProducts();
   },
   components: {
-    gardensize: _components_gardensize_vue__WEBPACK_IMPORTED_MODULE_2__.default,
-    myheader: _components_myheader_vue__WEBPACK_IMPORTED_MODULE_1__.default,
-    budget: _components_budget_vue__WEBPACK_IMPORTED_MODULE_3__.default,
-    main: _main_vue__WEBPACK_IMPORTED_MODULE_0__.default
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/main.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/main.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  data: function data() {
-    return {
-      pool: "",
-      enabled: false
-    };
-  },
-  methods: {
-    disabledbutton: function disabledbutton() {
-      this.enabled = false;
-
-      if (this.pool.length > 0) {
-        return this.enabled = true;
-      }
-    },
-    checkinput: function checkinput() {
-      if (this.pool) {
-        console.log(this.pool);
-      }
-    }
+    gardensize: _components_gardensize_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+    myheader: _components_myheader_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    budget: _components_budget_vue__WEBPACK_IMPORTED_MODULE_2__.default
   }
 });
 
@@ -3037,7 +3296,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.c
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_src_back_jpg__WEBPACK_IMPORTED_MODULE_2__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".v-application--wrap {\n  background-color: rgba(0, 0, 0, 0.3);\n}\n#app {\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center center;\n  display: block;\n  height: 100%;\n  width: 100%;\n}\nbody {\n  width: 100vw;\n  height: 100vh;\n  font-family: \"Lato\", sans-serif;\n}\n.v-btn:hover {\n  text-decoration: none;\n}\n.infotext {\n  margin-top: 1vw;\n  letter-spacing: 0;\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.2vw;\n  color: #ffffff;\n  text-transform: capitalize;\n}\n.bar {\n  background: linear-gradient(to right, white, white, rgba(202, 231, 245, 0.8), rgba(38, 165, 223, 0.83));\n}\np {\n  color: #9a9a9a;\n  line-height: 1.3;\n  font-size: 2.5vw;\n  font-size: 2vh;\n  font-weight: 200;\n}\n.small {\n  color: #9a9a9a;\n  line-height: 1;\n  font-size: 2vw;\n  font-size: 1.5vh;\n  font-weight: 200;\n}\nh2 {\n  font-size: 2.5vw;\n  margin-top: 2%;\n  font-family: \"Lato\", sans-serif;\n  font-weight: bold;\n  letter-spacing: 0;\n  display: contents;\n  white-space: pre;\n}\n.title {\n  opacity: 1;\n  color: #ef7d01;\n}\n.smalltitle {\n  margin-top: 1.5%;\n  margin-left: 3%;\n}\n.smallh2 {\n  color: #ef7d01;\n  font-size: 3.5vw;\n  text-align: center;\n  font-family: \"Lato\", sans-serif;\n  font-weight: bold;\n  letter-spacing: 0;\n  display: contents;\n  white-space: pre;\n}\nimg {\n  max-width: 40%;\n  height: auto;\n  width: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".v-application--wrap {\n  background-color: rgba(0, 0, 0, 0.3);\n}\n#app {\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center center;\n  display: block;\n  height: 100%;\n  width: 100%;\n}\nbody {\n  width: 100vw;\n  height: 100vh;\n  overflow-x: hidden;\n  font-family: \"Lato\", sans-serif;\n}\n.v-btn:hover {\n  text-decoration: none;\n}\n.infotext {\n  margin-top: 1vw;\n  letter-spacing: 0;\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.2vw;\n  color: #ffffff;\n  text-transform: capitalize;\n}\n.bar {\n  background: linear-gradient(to right, white, white, rgba(202, 231, 245, 0.8), rgba(38, 165, 223, 0.83));\n}\np {\n  color: #9a9a9a;\n  line-height: 1.3;\n  font-size: 2.5vw;\n  font-size: 2vh;\n  font-weight: 200;\n}\n.small {\n  color: #9a9a9a;\n  line-height: 1;\n  font-size: 2vw;\n  font-size: 1.5vh;\n  font-weight: 200;\n}\nh2 {\n  font-size: 2.5vw;\n  margin-top: 2%;\n  font-family: \"Lato\", sans-serif;\n  font-weight: bold;\n  letter-spacing: 0;\n  display: contents;\n  white-space: pre;\n}\n.title {\n  opacity: 1;\n  color: #ef7d01;\n}\n.smalltitle {\n  margin-top: 1.5%;\n  margin-left: 3%;\n}\n.smallh2 {\n  color: #ef7d01;\n  font-size: 3.5vw;\n  text-align: center;\n  font-family: \"Lato\", sans-serif;\n  font-weight: bold;\n  letter-spacing: 0;\n  display: contents;\n  white-space: pre;\n}\nimg {\n  max-width: 40%;\n  height: auto;\n  width: 100%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3151,7 +3410,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.card_display{\n\n    border: 1px solid gray;\n}\n.category_display{\n    padding-left: 10px;\n    border: 1px solid lightgray;\n}\n.item_display{\n    padding-right: 10px;\n    border: 1px solid lightgray;\n    min-height: 70vh;\n    max-height: 80vh;\n    justify-content: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.card_display{\r\n\r\n    border: 1px solid gray;\n}\n.category_display{\r\n    padding-left: 10px;\r\n    border: 1px solid lightgray;\n}\n.item_display{\r\n    padding-right: 10px;\r\n    border: 1px solid lightgray;\r\n    min-height: 70vh;\r\n    max-height: 80vh;\r\n    justify-content: center;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3201,7 +3460,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3249,7 +3508,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#app[data-v-328e0690] {\n  background-color: white;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#app[data-v-328e0690] {\n  background: white;\n  height: 100%;\n  width: 100%;\n}\nbody[data-v-328e0690] {\n  width: 100vw;\n  height: 100vh;\n  overflow: scroll;\n  font-family: \"Lato\", sans-serif;\n}\n.cardstyle[data-v-328e0690] {\n  color: #efefef;\n}\n.category[data-v-328e0690] {\n  background-color: #fcfcfc;\n  width: 40vw;\n  height: 100vh;\n}\n.item[data-v-328e0690] {\n  background-color: #ffffff;\n}\n.pool[data-v-328e0690] {\n  scroll-behavior: auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5404,7 +5663,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            LEGEN SIE IHR BUDGET FEST\n "),
+                      _vm._v("\r\n            LEGEN SIE IHR BUDGET FEST\r\n "),
                       _c("v-icon", [
                         _vm._v(
                           _vm._s(
@@ -5445,7 +5704,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            LEGEN SIE IHR BUDGET FEST\n "),
+                      _vm._v("\r\n            LEGEN SIE IHR BUDGET FEST\r\n "),
                       _c("v-icon", [
                         _vm._v(
                           _vm._s(
@@ -6070,6 +6329,7 @@ var render = function() {
                     class: _vm.btncolor.txt,
                     attrs: {
                       to: "/config",
+                      rounded: "",
                       width: _vm.btncolor.wd,
                       height: _vm.btncolor.he,
                       color: _vm.btncolor.config
@@ -6714,16 +6974,7 @@ var render = function() {
             _c("v-row", { attrs: { "no-gutters": "" } }, [
               _c(
                 "div",
-                {
-                  staticClass: "category",
-                  model: {
-                    value: _vm.e6,
-                    callback: function($$v) {
-                      _vm.e6 = $$v
-                    },
-                    expression: "e6"
-                  }
-                },
+                { staticClass: "category" },
                 [
                   _c(
                     "v-card",
@@ -6731,7 +6982,8 @@ var render = function() {
                       attrs: {
                         height: _vm.cardstyle.ht,
                         width: _vm.cardstyle.wdth,
-                        color: _vm.cardstyle.color
+                        color: _vm.cardstyle.color,
+                        "active-class": _vm.cardstyle.activecolor
                       }
                     },
                     [
@@ -6800,7 +7052,23 @@ var render = function() {
                       [
                         _c("v-divider"),
                         _vm._v(" "),
-                        _c("v-card-text", [_vm._v(" Budget Card ")])
+                        _c("v-card-text", [_vm._v(" Budget Card ")]),
+                        _vm._v(" "),
+                        _c("v-spacer"),
+                        _vm._v(" "),
+                        _c(
+                          "v-btn",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.enablesecondstep()
+                                _vm.show = !_vm.show
+                                _vm.showsize = !_vm.showsize
+                              }
+                            }
+                          },
+                          [_vm._v("Next")]
+                        )
                       ],
                       1
                     )
@@ -6812,7 +7080,8 @@ var render = function() {
                       attrs: {
                         height: _vm.cardstyle.ht,
                         width: _vm.cardstyle.wdth,
-                        color: _vm.cardstyle.color
+                        color: _vm.cardstyle.color,
+                        disabled: !_vm.budgetcomplete
                       }
                     },
                     [
@@ -6883,7 +7152,9 @@ var render = function() {
                       [
                         _c("v-divider"),
                         _vm._v(" "),
-                        _c("v-card-text", [_vm._v(" Budget Card ")])
+                        _c("v-card-text", [
+                          _vm._v(" Category display will be here ")
+                        ])
                       ],
                       1
                     )
@@ -6895,7 +7166,8 @@ var render = function() {
                       attrs: {
                         height: _vm.cardstyle.ht,
                         width: _vm.cardstyle.wdth,
-                        color: _vm.cardstyle.color
+                        color: _vm.cardstyle.color,
+                        disabled: !_vm.step2complete
                       }
                     },
                     [
@@ -6986,7 +7258,124 @@ var render = function() {
                       }
                     ]
                   },
-                  [_c("budget")],
+                  [
+                    _c(
+                      "v-app",
+                      [
+                        _c(
+                          "v-col",
+                          { attrs: { align: "center", justify: "center" } },
+                          [
+                            _vm._v(
+                              "\n                Product or category information display\n                "
+                            ),
+                            _c("h4", [
+                              _vm._v(
+                                "Your selected Item in Category 2 is " +
+                                  _vm._s(_vm.accessories)
+                              )
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("v-divider"),
+                        _vm._v(" "),
+                        _c(
+                          "v-row",
+                          { staticClass: "ml-5" },
+                          [
+                            _vm._l(_vm.productsaccessories, function(item) {
+                              return _c(
+                                "v-card",
+                                {
+                                  key: item,
+                                  staticClass: "mx-5 mt-7",
+                                  attrs: {
+                                    "max-width": "30vh",
+                                    "max-height": "30vh",
+                                    "min-width": "30vh"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                  " +
+                                      _vm._s(item.name) +
+                                      "\n                  "
+                                  ),
+                                  _c("v-img", { attrs: { src: item.media } }),
+                                  _vm._v(" "),
+                                  _c("v-checkbox", {
+                                    attrs: { value: item.id },
+                                    on: { click: _vm.disabledbutton2 },
+                                    model: {
+                                      value: _vm.accessories,
+                                      callback: function($$v) {
+                                        _vm.accessories = $$v
+                                      },
+                                      expression: "accessories"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            }),
+                            _vm._v(
+                              "\n\n                " +
+                                _vm._s(_vm.accessories) +
+                                "\n              "
+                            )
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-row",
+                          { staticClass: "mx-5 mb-3" },
+                          [
+                            _c(
+                              "v-btn",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.show = !_vm.show
+                                    _vm.showpool = !_vm.showpool
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Previous Step\n                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                attrs: { disabled: !_vm.enabled },
+                                on: {
+                                  click: function($event) {
+                                    _vm.enablelaststep()
+                                    _vm.showsize = !_vm.showsize
+                                    _vm.showpool = !_vm.showpool
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Next Step\n                "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
                   1
                 ),
                 _vm._v(" "),
@@ -7002,7 +7391,117 @@ var render = function() {
                       }
                     ]
                   },
-                  [_c("gardensize")],
+                  [
+                    _c(
+                      "v-app",
+                      [
+                        _c(
+                          "v-col",
+                          { attrs: { align: "center", justify: "center" } },
+                          [
+                            _vm._v(
+                              "\n                Product or category information display\n                "
+                            ),
+                            _c("h4", [
+                              _vm._v(
+                                "Your selected Item in category 3 is " +
+                                  _vm._s(_vm.pool)
+                              )
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("v-divider"),
+                        _vm._v(" "),
+                        _c(
+                          "v-row",
+                          { staticClass: "ml-5" },
+                          [
+                            _vm._l(_vm.products.slice(0, 3), function(item) {
+                              return _c(
+                                "v-card",
+                                {
+                                  key: item,
+                                  staticClass: "mx-5 mt-7",
+                                  attrs: {
+                                    "max-width": "30vh",
+                                    "max-height": "30vh"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                  " +
+                                      _vm._s(item.name) +
+                                      "\n                  "
+                                  ),
+                                  _c("v-img", { attrs: { src: item.media } }),
+                                  _vm._v(" "),
+                                  _c("v-checkbox", {
+                                    attrs: { value: item.id },
+                                    on: { click: _vm.disabledbutton },
+                                    model: {
+                                      value: _vm.pool,
+                                      callback: function($$v) {
+                                        _vm.pool = $$v
+                                      },
+                                      expression: "pool"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            }),
+                            _vm._v(
+                              "\n\n                " +
+                                _vm._s(_vm.pool) +
+                                "\n              "
+                            )
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-row",
+                          { staticClass: "mx-5 mb-3" },
+                          [
+                            _c(
+                              "v-btn",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.showpool = !_vm.showpool
+                                    _vm.showsize = !_vm.showsize
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Previous Step\n                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                attrs: { disabled: !_vm.enabled },
+                                on: { click: _vm.alertfunc }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Next Step\n                "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
                   1
                 )
               ])
@@ -7041,121 +7540,414 @@ var render = function() {
   return _c(
     "v-app",
     [
-      _c("v-col", { attrs: { align: "center", justify: "center" } }, [
-        _vm._v("\n    Product or category information display\n    "),
-        _c("h4", [_vm._v("Your selected Item is " + _vm._s(_vm.pool))])
-      ]),
-      _vm._v(" "),
-      _c("v-divider"),
-      _vm._v(" "),
       _c(
-        "v-row",
-        { staticClass: "ml-5" },
+        "div",
         [
           _c(
-            "v-card",
+            "v-app-bar",
             {
-              staticClass: "mx-5 mt-7",
-              attrs: { "max-width": "30vh", "max-height": "30vh" }
+              attrs: {
+                height: "100px",
+                src: "https://i.ibb.co/g9XQyF4/Adobe-Stock-872969-2x.jpg",
+                alt: "Adobe-Stock-872969-2x"
+              },
+              scopedSlots: _vm._u([
+                {
+                  key: "img",
+                  fn: function(ref) {
+                    var props = ref.props
+                    return [
+                      _c(
+                        "v-img",
+                        _vm._b(
+                          {
+                            attrs: {
+                              gradient:
+                                "to right, white,rgba(255,255,255,0.96),rgba(202, 231, 245, 0.8),transparent "
+                            }
+                          },
+                          "v-img",
+                          props,
+                          false
+                        )
+                      )
+                    ]
+                  }
+                }
+              ])
             },
             [
-              _vm._v("\n      first card\n      "),
-              _c("v-img", {
-                attrs: { src: "https://i.ibb.co/mJXPTz2/Group-14-2x.jpg" }
-              }),
               _vm._v(" "),
-              _c("v-checkbox", {
-                attrs: { value: "item1" },
-                on: { click: _vm.disabledbutton },
-                model: {
-                  value: _vm.pool,
-                  callback: function($$v) {
-                    _vm.pool = $$v
-                  },
-                  expression: "pool"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-card",
-            {
-              staticClass: "mx-2 mt-7",
-              attrs: { "max-width": "30vh", "max-height": "30vh" }
-            },
-            [
-              _vm._v("\n      first card\n      "),
-              _c("v-img", {
-                attrs: { src: "https://i.ibb.co/mJXPTz2/Group-14-2x.jpg " }
-              }),
+              _c(
+                "div",
+                [
+                  _c("v-img", {
+                    attrs: {
+                      height: "12vh",
+                      width: "9vw",
+                      contain: "",
+                      src: "https://i.ibb.co/mJXPTz2/Group-14-2x.jpg",
+                      alt: "logo"
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.homepage()
+                      }
+                    }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("v-checkbox", {
-                attrs: { value: "item2" },
-                on: { click: _vm.disabledbutton },
-                model: {
-                  value: _vm.pool,
-                  callback: function($$v) {
-                    _vm.pool = $$v
-                  },
-                  expression: "pool"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-card",
-            {
-              staticClass: "mx-2 mt-7",
-              attrs: { "max-width": "30vh", "max-height": "30vh" }
-            },
-            [
-              _vm._v("\n      first card\n      "),
-              _c("v-img", {
-                attrs: { src: "https://i.ibb.co/mJXPTz2/Group-14-2x.jpg" }
-              }),
-              _vm._v(" "),
-              _c("v-checkbox", {
-                attrs: { value: "item3" },
-                on: { click: _vm.disabledbutton },
-                model: {
-                  value: _vm.pool,
-                  callback: function($$v) {
-                    _vm.pool = $$v
-                  },
-                  expression: "pool"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v("\n    " + _vm._s(_vm.pool) + "\n  ")
+              _c("h4", { staticClass: "title" }, [
+                _vm._v("Willkommen im Cranpool Konfigurator")
+              ])
+            ]
+          )
         ],
         1
       ),
       _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "mx-5 mb-3" },
-        [
-          _c("v-btn", [_vm._v(" Previous Step ")]),
-          _vm._v(" "),
-          _c("v-spacer"),
-          _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              attrs: { disabled: !_vm.enabled },
-              on: { click: _vm.checkinput }
-            },
-            [_vm._v(" Next Step ")]
-          )
-        ],
-        1
-      )
+      _c("v-main", [
+        _c(
+          "div",
+          [
+            _c("v-row", { attrs: { "no-gutters": "" } }, [
+              _c(
+                "div",
+                { staticClass: "category" },
+                [
+                  _c(
+                    "v-stepper",
+                    {
+                      model: {
+                        value: _vm.e3,
+                        callback: function($$v) {
+                          _vm.e3 = $$v
+                        },
+                        expression: "e3"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-stepper-step",
+                        { attrs: { complete: _vm.e3 > 1, step: "1" } },
+                        [
+                          _c(
+                            "v-card",
+                            {
+                              attrs: {
+                                height: _vm.cardstyle.ht,
+                                width: _vm.cardstyle.wdth,
+                                color: _vm.cardstyle.color
+                              }
+                            },
+                            [
+                              _c(
+                                "v-card-actions",
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          _vm.show = !_vm.show
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Budget ")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: {
+                                        depressed: "",
+                                        color: "#EFEFEF"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.show = !_vm.show
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("v-icon", [
+                                        _vm._v(
+                                          "\n                      " +
+                                            _vm._s(
+                                              _vm.show
+                                                ? "mdi-chevron-up"
+                                                : "mdi-chevron-down"
+                                            ) +
+                                            "\n                    "
+                                        )
+                                      ])
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-expand-transition", [
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.show,
+                                expression: "show"
+                              }
+                            ]
+                          },
+                          [
+                            _c("v-divider"),
+                            _vm._v(" "),
+                            _c("v-card-text", [_vm._v(" Budget Card ")]),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.e3 = 2
+                                  }
+                                }
+                              },
+                              [_vm._v(" Next")]
+                            )
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-step",
+                        { attrs: { complete: _vm.e3 > 2, step: "2" } },
+                        [
+                          _c(
+                            "v-card",
+                            {
+                              attrs: {
+                                height: _vm.cardstyle.ht,
+                                width: _vm.cardstyle.wdth,
+                                color: _vm.cardstyle.color
+                              }
+                            },
+                            [
+                              _c(
+                                "v-card-actions",
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          _vm.component = "gardensize"
+                                          _vm.showsize = !_vm.showsize
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("CATEGORY 2")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: {
+                                        depressed: "",
+                                        color: "#EFEFEF"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.component = "gardensize"
+                                          _vm.showsize = !_vm.showsize
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("v-icon", [
+                                        _vm._v(
+                                          "\n                      " +
+                                            _vm._s(
+                                              _vm.showsize
+                                                ? "mdi-chevron-up"
+                                                : "mdi-chevron-down"
+                                            ) +
+                                            "\n                    "
+                                        )
+                                      ])
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-expand-transition", [
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.showsize,
+                                expression: "showsize"
+                              }
+                            ]
+                          },
+                          [
+                            _c("v-divider"),
+                            _vm._v(" "),
+                            _c("v-card-text", [_vm._v(" Budget Card ")])
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        {
+                          attrs: {
+                            height: _vm.cardstyle.ht,
+                            width: _vm.cardstyle.wdth,
+                            color: _vm.cardstyle.color
+                          }
+                        },
+                        [
+                          _c(
+                            "v-card-actions",
+                            [
+                              _c(
+                                "v-card-text",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.showpool = !_vm.showpool
+                                    }
+                                  }
+                                },
+                                [_vm._v("CATEGORY 3")]
+                              ),
+                              _vm._v(" "),
+                              _c("v-spacer"),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { depressed: "", color: "#EFEFEF" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.showpool = !_vm.showpool
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("v-icon", [
+                                    _vm._v(
+                                      "\n                    " +
+                                        _vm._s(
+                                          _vm.showpool
+                                            ? "mdi-chevron-up"
+                                            : "mdi-chevron-down"
+                                        ) +
+                                        "\n                  "
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-expand-transition", [
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.showpool,
+                                expression: "showpool"
+                              }
+                            ]
+                          },
+                          [
+                            _c("v-divider"),
+                            _vm._v(" "),
+                            _c("v-card-text", [_vm._v(" Budget Card ")])
+                          ],
+                          1
+                        )
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "item" },
+                [
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "2" } },
+                    [_c("budget")],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.showpool,
+                          expression: "showpool"
+                        }
+                      ]
+                    },
+                    [_c("gardensize")],
+                    1
+                  )
+                ],
+                1
+              )
+            ])
+          ],
+          1
+        )
+      ])
     ],
     1
   )
@@ -7191,7 +7983,7 @@ var render = function() {
         { attrs: { dense: "", "max-height": "100" } },
         [
           _c("h1", { staticClass: "display-1" }, [
-            _vm._v("\n      Configurator\n    ")
+            _vm._v("\r\n      Configurator\r\n    ")
           ]),
           _vm._v(" "),
           _c("v-spacer"),
@@ -7199,7 +7991,7 @@ var render = function() {
           _c(
             "v-btn",
             { attrs: { to: "main", small: "", rounded: "", depressed: "" } },
-            [_vm._v("\n      Exit Configuration\n    ")]
+            [_vm._v("\r\n      Exit Configuration\r\n    ")]
           )
         ],
         1
@@ -7221,7 +8013,7 @@ var render = function() {
                       attrs: { height: "150", color: "grey", width: "250" }
                     },
                     [
-                      _vm._v("\n              Garden Size\n              "),
+                      _vm._v("\r\n              Garden Size\r\n              "),
                       _c(
                         "v-card-actions",
                         [
@@ -7253,7 +8045,7 @@ var render = function() {
                       attrs: { height: "150", color: "grey", width: "250" }
                     },
                     [
-                      _vm._v("\n              PoolBase\n              "),
+                      _vm._v("\r\n              PoolBase\r\n              "),
                       _c(
                         "v-card-actions",
                         [
@@ -7285,7 +8077,7 @@ var render = function() {
                       attrs: { height: "150", color: "grey", width: "250" }
                     },
                     [
-                      _vm._v("\n              Addons\n              "),
+                      _vm._v("\r\n              Addons\r\n              "),
                       _c(
                         "v-card-actions",
                         [
@@ -7322,7 +8114,7 @@ var render = function() {
                         rounded: ""
                       }
                     },
-                    [_vm._v("\n          Checkout\n        ")]
+                    [_vm._v("\r\n          Checkout\r\n        ")]
                   )
                 ],
                 1

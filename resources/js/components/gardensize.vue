@@ -40,7 +40,8 @@ export default {
   },
   methods: {
     disabledbutton() {
-      if (this.pool.length > 0) {
+      this.enabled = false;
+      if (this.pool) {
         return (this.enabled = true);
       }
     },

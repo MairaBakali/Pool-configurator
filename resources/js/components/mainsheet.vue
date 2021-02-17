@@ -25,6 +25,7 @@
           <v-btn
             to="/config"
             class="mt-7 btn-content"
+            rounded
             :width="btncolor.wd"
             :height="btncolor.he"
             :class="btncolor.txt"
