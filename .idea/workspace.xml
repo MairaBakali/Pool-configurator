@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbd22710-c5fc-4076-8daf-f77f587dd53e" name="Default Changelist" comment="" />
+    <list default="true" id="bbd22710-c5fc-4076-8daf-f77f587dd53e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/LaravelJson.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LaravelJson.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b4adf7b8-ab83-4b76-b17b-b4a8d6eb0278.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_19_085927_create_tests_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_26_122357_create_products_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/schema/sqlite-schema.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,7 +23,12 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -61,7 +80,6 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
@@ -101,7 +119,6 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
@@ -120,6 +137,8 @@
       <path value="$PROJECT_DIR$/vendor/laravel/sail" />
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
     </include_path>
   </component>
   <component name="ProjectId" id="1nHxKTPt5cE281NxDWeGWIiIQ6Q" />
@@ -144,7 +163,10 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bbd22710-c5fc-4076-8daf-f77f587dd53e" name="Default Changelist" comment="" />
@@ -163,10 +185,28 @@
       <workItem from="1611662770177" duration="307000" />
       <workItem from="1611663580813" duration="686000" />
       <workItem from="1611675120043" duration="4000" />
+      <workItem from="1613047432546" duration="4603000" />
+      <workItem from="1613053039987" duration="4904000" />
+      <workItem from="1613121770017" duration="2568000" />
+      <workItem from="1613384059381" duration="49657000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-937" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613047900738">
+      <screen x="-1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="-937" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1613047900738" />
+    <state x="-987" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1613384081539">
+      <screen x="-1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="-987" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1613384081539" />
+    <state x="-987" y="96" width="607" height="536" key="find.popup" timestamp="1613386346402">
+      <screen x="-1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="-987" y="96" width="607" height="536" key="find.popup/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1613386346402" />
   </component>
 </project>
