@@ -6,24 +6,19 @@
     </v-col>
     <v-divider></v-divider>
     <v-row class="ml-5">
-      <v-card class="mx-5 mt-7" max-width="30vh" max-height="30vh">
-        first card
-        <v-img src="https://i.ibb.co/mJXPTz2/Group-14-2x.jpg" />
-        <v-checkbox value="item1" @click="disabledbutton" v-model="pool">
+      <v-card
+        v-for="item in products.slice(0, 3)"
+        :key="item"
+        class="mx-5 mt-7"
+        max-width="30vh"
+        max-height="30vh"
+      >
+        {{ item.name }}
+        <v-img :src="item.media" />
+        <v-checkbox :value="item.id" @click="disabledbutton" v-model="pool">
         </v-checkbox>
       </v-card>
-      <v-card class="mx-2 mt-7" max-width="30vh" max-height="30vh">
-        first card
-        <v-img src="https://i.ibb.co/mJXPTz2/Group-14-2x.jpg " />
-        <v-checkbox value="item2" @click="disabledbutton" v-model="pool">
-        </v-checkbox>
-      </v-card>
-      <v-card class="mx-2 mt-7" max-width="30vh" max-height="30vh">
-        first card
-        <v-img src="https://i.ibb.co/mJXPTz2/Group-14-2x.jpg" />
-        <v-checkbox @click="disabledbutton" value="item3" v-model="pool">
-        </v-checkbox>
-      </v-card>
+
       {{ pool }}
     </v-row>
     <v-row class="mx-5 mb-3">
@@ -34,16 +29,17 @@
   </v-app>
 </template>
 <script>
+const axios = require("axios");
 export default {
   data() {
     return {
+      products: [],
       pool: "",
       enabled: false,
     };
   },
   methods: {
     disabledbutton() {
-      this.enabled = false;
       if (this.pool.length > 0) {
         return (this.enabled = true);
       }
@@ -53,6 +49,14 @@ export default {
         console.log(this.pool);
       }
     },
+    getProducts() {
+      axios.get("./api/products").then((response) => {
+        this.products = response.data;
+      });
+    },
+  },
+  mounted() {
+    this.getProducts();
   },
 };
 </script>

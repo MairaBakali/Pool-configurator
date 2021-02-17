@@ -2,7 +2,7 @@
   <v-app>
     <div>
       <v-app-bar
-        height="120px"
+        height="100px"
         src="https://i.ibb.co/g9XQyF4/Adobe-Stock-872969-2x.jpg"
         alt="Adobe-Stock-872969-2x"
       >
@@ -38,7 +38,7 @@
             >
               <v-card-actions>
                 <v-card-text @click="show = !show"
-                  >LEGEN SIE IHR BUDGET FEST</v-card-text
+                  >Budget </v-card-text
                 >
                 <v-spacer></v-spacer>
                 <v-btn
@@ -67,7 +67,7 @@
             >
               <v-card-actions>
                 <v-card-text @click="component = 'gardensize';showsize = !showsize"
-                  >GRUNDFLÄCHE BESTIMMEN</v-card-text
+                  >CATEGORY 2</v-card-text
                 >
                 <v-spacer></v-spacer>
                 <v-btn
@@ -85,6 +85,7 @@
               </v-card-actions>
             </v-card>
             <v-expand-transition>
+
               <div v-show="showsize">
 
                 <v-divider></v-divider>
@@ -99,12 +100,11 @@
             >
               <v-card-actions>
                 <v-card-text @click="showpool = !showpool"
-                  >LEGEN SIE IHR BUDGET FEST</v-card-text
+                  >CATEGORY 3</v-card-text
                 >
                 <v-spacer></v-spacer>
                 <v-btn
                   @click="
-                    component = 'addons';
                     showpool = !showpool;
                   "
                   depressed
@@ -126,12 +126,12 @@
           </div>
           <div class="item">
               <div v-show="showsize">
-
+                  <budget></budget>
+              </div>
+              <div v-show="showpool">
                   <gardensize></gardensize>
               </div>
-              <keep-alive>
-            <component :is="component"></component>
-              </keep-alive>
+
           </div>
         </v-row>
       </div>
@@ -139,15 +139,19 @@
   </v-app>
 </template>
 <script>
+const axios = require("axios");
+import main from "./main.vue";
 import myheader from "../components/myheader.vue";
 import gardensize from "../components/gardensize.vue";
 import budget from "../components/budget.vue";
-import addons from "../components/addons.vue";
 export default {
   data() {
     return {
+      products: [],
+      pool: "",
       e6: 1,
       show: false,
+      enabled: false,
       showsize: false,
       showpool: false,
       toggle_exclusive: undefined,
@@ -162,18 +166,45 @@ export default {
     homepage() {
       this.$router.push("/home");
     },
+    disabledbutton() {
+      this.enabled = false;
+      if (this.pool.length > 0) {
+        return (this.enabled = true);
+      }
+    },
+    checkinput() {
+      if (this.pool) {
+        console.log(this.pool);
+      }
+    },
+    getProducts() {
+      axios.get("./api/products").then((response) => {
+        this.products = response.data;
+      });
+    },
+  },
+  mounted() {
+    this.getProducts();
   },
   components: {
     gardensize,
     myheader,
     budget,
-    addons,
+    main,
   },
 };
 </script>
 <style scoped>
 #app {
   background: white;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
 }
 .cardstyle {
   color: #efefef;
@@ -181,9 +212,12 @@ export default {
 .category {
   background-color: #fcfcfc;
   width: 40vw;
+  height: 100vh;
 }
 .item {
-  height: fit-content;
   background-color: #ffffff;
+}
+.pool {
+  scroll-behavior: auto;
 }
 </style>
