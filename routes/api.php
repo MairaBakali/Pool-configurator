@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\ProductController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\APIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/articles', [ProductController::class,'index'] );
+// http://pool-configurator.test/api/products?limit=5&offset=1
+Route::get('/products', [APIController::class,'getMainProducts']);
+Route::get('/product/accessories', [APIController::class,'getProductAccessories']);
+Route::get('/product/service', [APIController::class,'getProductService']);
