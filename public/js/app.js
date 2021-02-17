@@ -282,10 +282,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      pool: "item1",
+      pool: "",
       enabled: false
     };
   },
@@ -318,7 +319,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-//
 //
 //
 //
@@ -788,6 +788,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -804,8 +811,7 @@ __webpack_require__.r(__webpack_exports__);
         color: "#EFEFEF",
         wdth: "40vw",
         ht: "8.4vh"
-      },
-      component: "gardensize"
+      }
     };
   },
   methods: {
@@ -3708,7 +3714,8 @@ var render = function() {
     "v-app",
     [
       _c("v-col", { attrs: { align: "center", justify: "center" } }, [
-        _vm._v("\n    Product or category information display\n  ")
+        _vm._v("\n    Product or category information display\n    "),
+        _c("h4", [_vm._v("Your selected Item is " + _vm._s(_vm.pool))])
       ]),
       _vm._v(" "),
       _c("v-divider"),
@@ -3878,7 +3885,6 @@ var render = function() {
                       to: "/config",
                       width: _vm.btncolor.wd,
                       height: _vm.btncolor.he,
-                      rounded: "",
                       color: _vm.btncolor.config
                     }
                   },
@@ -4017,7 +4023,7 @@ var render = function() {
                       to: "/config",
                       width: _vm.btncolor.wdsm,
                       height: _vm.btncolor.htsm,
-                      rounded: "",
+                      "rounded-pill": "",
                       color: _vm.btncolor.config
                     }
                   },
@@ -4647,7 +4653,7 @@ var render = function() {
                               attrs: { depressed: "", color: "#EFEFEF" },
                               on: {
                                 click: function($event) {
-                                  _vm.component = "budget"
+                                  _vm.component = "gardensize"
                                   _vm.showsize = !_vm.showsize
                                 }
                               }
@@ -4784,7 +4790,25 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "item" },
-                [_c(_vm.component, { tag: "component" })],
+                [
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.showsize,
+                          expression: "showsize"
+                        }
+                      ]
+                    },
+                    [_c("gardensize")],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("keep-alive", [_c(_vm.component, { tag: "component" })], 1)
+                ],
                 1
               )
             ])

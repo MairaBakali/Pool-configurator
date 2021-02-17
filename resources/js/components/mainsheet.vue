@@ -28,7 +28,6 @@
             :width="btncolor.wd"
             :height="btncolor.he"
             :class="btncolor.txt"
-            rounded
             :color="btncolor.config"
           >
             <v-row>
@@ -81,7 +80,7 @@
             :width="btncolor.wdsm"
             :height="btncolor.htsm"
             :class="btncolor.txt"
-            rounded
+            rounded-pill
             :color="btncolor.config"
           >
             <v-row>
@@ -156,6 +155,10 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+$rounded: (
+  "pill": 9999px,
+);
+
 .btn-content {
   display: grid;
 }

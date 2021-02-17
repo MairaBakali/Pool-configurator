@@ -72,7 +72,7 @@
                 <v-spacer></v-spacer>
                 <v-btn
                   @click="
-                    component = 'budget';
+                    component = 'gardensize';
                     showsize = !showsize;
                   "
                   depressed
@@ -86,6 +86,7 @@
             </v-card>
             <v-expand-transition>
               <div v-show="showsize">
+
                 <v-divider></v-divider>
 
                 <v-card-text> Budget Card </v-card-text>
@@ -124,7 +125,13 @@
             </v-expand-transition>
           </div>
           <div class="item">
+              <div v-show="showsize">
+
+                  <gardensize></gardensize>
+              </div>
+              <keep-alive>
             <component :is="component"></component>
+              </keep-alive>
           </div>
         </v-row>
       </div>
@@ -149,7 +156,6 @@ export default {
         wdth: "40vw",
         ht: "8.4vh",
       },
-      component: "gardensize",
     };
   },
   methods: {

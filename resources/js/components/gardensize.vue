@@ -2,6 +2,7 @@
   <v-app>
     <v-col align="center" justify="center">
       Product or category information display
+      <h4>Your selected Item is {{ pool }}</h4>
     </v-col>
     <v-divider></v-divider>
     <v-row class="ml-5">
@@ -36,7 +37,7 @@
 export default {
   data() {
     return {
-      pool: "item1",
+      pool: "",
       enabled: false,
     };
   },
