@@ -20,7 +20,7 @@ use App\Http\Controllers\Cron\JobsController;
 Auth::routes();
 Route::get('/admin', [AdminController::class,'index']);
 Route::post('/save/configurator', [AdminController::class,'store']);
-Route::get('/fetch/Shopware/products',[JobsController::class,'fetchProductFromShopware']);
+Route::get('/fetch/shopware/products',[JobsController::class,'fetchProductFromShopware']);
 
 
 
@@ -28,8 +28,8 @@ Route::get('/{any}', function () {
     return view('home');
 })->where('any', '.*');
 
-Route::get('/article', [CustomerController::class,'store']);
-Route::get('/products', [ProductController::class,'index']);
-Route::get('/store', 'App\Http\Controllers\JsonController@store');
+//Route::get('/article', [CustomerController::class,'store']);
+//Route::get('/products', [ProductController::class,'index']);
+//Route::get('/store', 'App\Http\Controllers\JsonController@store');
 // Route::get('/view','App\Http\Controllers\ProductController@index');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

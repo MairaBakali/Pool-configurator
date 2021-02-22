@@ -6,22 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use App\Models\Config;
 use App\Models\Product;
-use App\Models\ProductLog;
 
 class JobsController extends Controller
 {
-    public function fetchProductFromShopware()
+    public function fetchProductFromShopware($offset = 0, $limit = 4, $productCounter = 0)
     {
         // Get data from Config table
         $config = Config::first();
-
-        // Setting offset and limit
-        $offset = 0;
-        $limit = 5;
-        $productLog = ProductLog::first();
-        if ($productLog) {
-            $offset = $productLog->total_product_api_call;
-        }
 
         // Get Products from Shopware API
         $response = Http::withDigestAuth($config->user_name, $config->api_key)->get($config->shop_url . '/api/articles', [
@@ -31,92 +22,103 @@ class JobsController extends Controller
 
         // Get json from API response
         $products = $response->json()['data'];
+
         if (count($products) > 0) {
 
-            // Count number of entries
-            $productCounter = 0;
             // Count number of loop
             $counter = 0;
+
+            // Hash from database
+            $result = Product::select('id', 'hash_id')->get()->toArray();
+
+            # Returns an array of values representing a single column from the input array.
+            $hash_from_db = array_column($result, 'hash_id');
+
             foreach ($products as $product) {
-                // Get Product Detail from Shopware API
-                $response = Http::withDigestAuth($config->user_name, $config->api_key)->get($config->shop_url . '/api/articles/' . $product['id']);
-                if ($response->status() === 200) {
 
-                    // Select data index from API response
-                    $product_detail = $response->json()['data'];
+                // Generating sha1 hash for checking
+                $hash = sha1($product['changed'] . $product['mainDetail']['number']);
 
-                    $categoryOne = $this->categoryURLToArray(strtolower($config->category_url_1));
-                    $categoryTwo = $this->categoryURLToArray(strtolower($config->category_url_2));
+                // Checking that product is not in database
+                if (!in_array($hash, $hash_from_db)) {
 
-                    if (in_array(strtolower($product_detail['propertyGroup']['name']), $categoryOne) ||
-                        $this->checkCategories($product_detail['categories'], $categoryTwo)) {
-
-                        $productModle = new Product;
-                        $productModle->product_id = $product_detail['id'];
-                        $productModle->detail_id = $product_detail['mainDetailId'];
-                        $productModle->name = $product_detail['name'];
-                        $productModle->description_long = $product_detail['descriptionLong'];
-                        $productModle->active = $product_detail['active'];
-                        $productModle->order_number = $product_detail['mainDetail']['number'];
-                        $productModle->in_Stock = $product_detail['mainDetail']['inStock'];
-                        $productModle->stock_min = $product_detail['mainDetail']['stockMin'];
-                        $productModle->shipping_free = $product_detail['mainDetail']['shippingFree'];
-                        $productModle->customer_group_key = $product_detail['mainDetail']['prices'][0]['customerGroupKey'];
-                        $productModle->tax_percent = $product_detail['tax']['tax'];
-                        $productModle->price = $this->calculatePrice($product_detail['mainDetail']['prices'][0]['price'], $product_detail['tax']['tax']);
-                        $productModle->property_group = strtolower($product_detail['propertyGroup']['name']);
-                        $productModle->category = $this->getCategory($product_detail['categories']);
-                        $productModle->media = $this->getMedia($product_detail['images'], $config);
-                        $saved = $productModle->save();
-                        if ($saved) {
-                            $productCounter++;
+                    // Get Product Detail from Shopware API
+                    $response = Http::withDigestAuth($config->user_name, $config->api_key)->get($config->shop_url . '/api/articles/' . $product['id']);
+                    if ($response->status() === 200) {
+                        // Check that current product is modified that delete old one
+                        $result = Product::select('id')->where('order_number', '=', $product['mainDetail']['number'])->get();
+                        if (count($result) > 0) {
+                            Product::destroy($result[0]['id']);
                         }
 
+                        // Select data index from API response
+                        $product_detail = $response->json()['data'];
+
+                        // Base products category form config table
+                        $base_products_category = $this->trimCategory(strtolower($config->base_products_category));
+                        // Compatible or related products category form config table
+                        $compatible_products_category = $this->trimCategory(strtolower($config->compatible_products_category));
+                        // Service & Assembly Product Category  form config table
+                        $product_services_category = $this->trimCategory(strtolower($config->product_services_category));
+                        // $categories array from $product_detail or single article API response
+                        $categories = array_map('strtolower', array_column($product_detail['categories'], 'name'));
+
+                        if (in_array($base_products_category, $categories) || in_array($compatible_products_category, $categories) || in_array($product_services_category, $categories)) {
+
+                            $productModle = new Product;
+                            $productModle->product_id = $product_detail['id'];
+                            $productModle->detail_id = $product_detail['mainDetailId'];
+                            $productModle->name = $product_detail['name'];
+                            $productModle->description_long = $product_detail['descriptionLong'];
+                            $productModle->active = $product_detail['active'];
+                            $productModle->order_number = $product_detail['mainDetail']['number'];
+                            $productModle->in_Stock = $product_detail['mainDetail']['inStock'];
+                            $productModle->stock_min = $product_detail['mainDetail']['stockMin'];
+                            $productModle->shipping_free = $product_detail['mainDetail']['shippingFree'];
+                            $productModle->customer_group_key = $product_detail['mainDetail']['prices'][0]['customerGroupKey'];
+                            $productModle->tax_percent = $product_detail['tax']['tax'];
+                            $productModle->price = $this->calculatePrice($product_detail['mainDetail']['prices'][0]['price'], $product_detail['tax']['tax']);
+                            $productModle->property_group = strtolower($product_detail['propertyGroup']['name']);
+                            $productModle->category = $this->getCategory($product_detail['categories']);
+                            $productModle->media = $this->getMedia($product_detail['images'], $config);
+                            $productModle->attr1 = $product_detail['mainDetail']['attribute']['attr1'];
+                            $productModle->attr2 = $product_detail['mainDetail']['attribute']['attr2'];
+                            $productModle->attr3 = $product_detail['mainDetail']['attribute']['attr3'];
+                            $productModle->hash_id = $hash;
+                            $saved = $productModle->save();
+                            if ($saved) {
+                                $productCounter++;
+                            }
+
+                        }
+
+
                     }
-                    $counter++;
                 }
+
+                $counter++;
             }
 
-            // Check and save numbers of api calls in database
-            $productLog = $productLog ? $productLog : new ProductLog;
-            $productLog->total_product_api_call = ($offset + $counter);
-            $productLog->save();
+            // Calling function again to fetch new record
+            $newOffset = ($offset + $counter);
+            $this->fetchProductFromShopware($newOffset, $limit, $productCounter);
 
-            return [
-                'message' => [
-                    "totalProductAddedInDatabase" => $productCounter
-                ],
-                "Status" => 200
-            ];
         }
-        // This will run when no response come from API
-        return [
-            'message' => [
-                "noNewProductFound" => '0 Product add in database',
-            ],
-            "Status" => 204
-        ];
+
+        return "Database updated successfully";
     }
 
-    private function categoryURLToArray($categoryURL)
+
+    private function trimCategory($category)
     {
         // Removing slash from start and end
-        $categoryPathname = rtrim(ltrim($categoryURL, '/'), '/');
-        // Convert in array
-        $categoryArray = explode("/", $categoryPathname);
-        return $categoryArray;
+        return rtrim(ltrim($category, '/'), '/');
     }
 
-    public function checkCategories($categories, $categoriesURLArray)
+    private function calculatePrice($price, $tax)
     {
-        $categoriesArray = explode(',', $this->getCategory($categories));
-        $matchCategories = 0;
-        foreach ($categoriesArray as $category) {
-            if (in_array(strtolower($category), $categoriesURLArray)) {
-                $matchCategories++;
-            }
-        }
-        return ($matchCategories > 0) ? true : false;
+        // $tax percent of $price
+        return round((($tax / 100) * $price) + ($price), 2);
     }
 
     private function getCategory($categories)
@@ -126,12 +128,6 @@ class JobsController extends Controller
             $categoryNames[] = $category['name'];
         }
         return implode(",", $categoryNames);
-    }
-
-    private function calculatePrice($price, $tax)
-    {
-        // $tax percent of $price
-        return round((($tax / 100) * $price) + ($price),2);
     }
 
     private function getMedia($images, $config)

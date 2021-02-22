@@ -21,6 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // http://pool-configurator.test/api/products?limit=5&offset=1
-Route::get('/products', [APIController::class,'getMainProducts']);
-Route::get('/product/accessories', [APIController::class,'getProductAccessories']);
-Route::get('/product/service', [APIController::class,'getProductService']);
+Route::get('/base/products', [APIController::class, 'getBaseProducts']);
+Route::post('/compatible/products', [APIController::class, 'getCompatibleProduct']);
+Route::get('/product/services', [APIController::class, 'getProductService']);

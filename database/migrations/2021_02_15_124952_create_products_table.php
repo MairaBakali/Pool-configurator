@@ -30,6 +30,10 @@ class CreateProductsTable extends Migration
             $table->text('property_group')->nullable(true);
             $table->text('category')->nullable(true);
             $table->text('media')->nullable(true);
+            $table->text('attr1')->nullable(true);
+            $table->text('attr2')->nullable(true);
+            $table->text('attr3')->nullable(true);
+            $table->string('hash_id')->nullable(true);
             $table->timestamps();
         });
     }

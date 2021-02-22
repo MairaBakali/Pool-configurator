@@ -27,9 +27,9 @@ class StoreConfiguratorRequest extends FormRequest
             'shop_url' => 'required|max:255',
             'user_name' => 'required|max:255',
             'api_key' => 'required|max:255',
-            'category_url_1' => 'required',
-            'category_url_2' => 'required',
-            'category_url_3' => 'required'
+            'base_products_category' => 'required',
+            'compatible_products_category' => 'required',
+            'product_services_category' => 'required'
         ];
     }
 }
