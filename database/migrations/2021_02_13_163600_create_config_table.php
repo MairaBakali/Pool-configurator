@@ -18,9 +18,9 @@ class CreateConfigTable extends Migration
             $table->string('shop_url');
             $table->string('user_name');
             $table->string('api_key');
-            $table->string('category_url_1');
-            $table->string('category_url_2');
-            $table->string('category_url_3');
+            $table->string('base_products_category');
+            $table->string('compatible_products_category');
+            $table->string('product_services_category');
             $table->timestamps();
         });
     }

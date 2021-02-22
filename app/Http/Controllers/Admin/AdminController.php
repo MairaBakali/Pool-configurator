@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreConfiguratorRequest;
 use App\Models\Config;
-use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -13,10 +12,10 @@ class AdminController extends Controller
     {
         return view('admin.configurator');
     }
-    
+
     public function store(StoreConfiguratorRequest $request)
     {
-        // The incoming request is valid because we use Form Request Validation 
+        // The incoming request is valid because we use Form Request Validation
         // Retrieve the validated input data...
         $validated = $request->validated();
         Config::truncate();

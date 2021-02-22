@@ -21,5 +21,5 @@ class Config extends Model
      *
      * @var array
      */
-    protected $fillable = ['shop_url','user_name','api_key','category_url_1','category_url_2','category_url_3'];
+    protected $fillable = ['shop_url','user_name','api_key','base_products_category','compatible_products_category','product_services_category'];
 }

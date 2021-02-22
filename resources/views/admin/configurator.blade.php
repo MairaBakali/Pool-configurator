@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
 
                 @if (session('success_message'))
                     <div class="alert alert-success">
@@ -12,14 +12,13 @@
 
                 @endif
                 <div class="card">
-                    <div class="card-header">Pool Configurator</div>
+                    <div class="card-header">Setup Your Pool Configurator</div>
                     <div class="card-body">
                         <form method="POST" action="{{url('/save/configurator')}}">
                             @csrf
-
                             <div class="form-group row">
                                 <label for="shop_url" class="col-md-4 col-form-label text-md-right">Shop URL *</label>
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                     <input id="shop_url" type="text" placeholder="https://example.com"
                                            class="form-control @error('shop_url') is-invalid @enderror" name="shop_url"
                                            value="{{ old('shop_url') }}" required autofocus>
@@ -31,12 +30,12 @@
                                 </div>
                             </div>
 
-
                             <div class="form-group row">
                                 <label for="user_name" class="col-md-4 col-form-label text-md-right">UserName *</label>
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                     <input id="api_key" type="text" placeholder="JohnDoe"
-                                           class="form-control @error('user_name') is-invalid @enderror" name="user_name"
+                                           class="form-control @error('user_name') is-invalid @enderror"
+                                           name="user_name"
                                            value="{{ old('user_name') }}" required>
 
                                     @error('user_name')
@@ -48,7 +47,7 @@
 
                             <div class="form-group row">
                                 <label for="api_key" class="col-md-4 col-form-label text-md-right">API Key *</label>
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                     <input id="api_key" type="text" placeholder="Ads781ddartyiopakiifvbhopetyavcd"
                                            class="form-control @error('api_key') is-invalid @enderror" name="api_key"
                                            value="{{ old('api_key') }}" required>
@@ -61,15 +60,17 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="category_url_1" class="col-md-4 col-form-label text-md-right">Category URL
-                                    (1) *</label>
-                                <div class="col-md-6">
-                                    <input id="category_url_1" type="text" placeholder="/category/"
-                                           class="form-control @error('category_url_1') is-invalid @enderror"
-                                           name="category_url_1"
-                                           value="{{ old('category_url_1') }}" required>
+                                <label for="base_products_category" class="col-md-4 col-form-label text-md-right">
+                                    Base Products Category *
+                                </label>
+                                <div class="col-md-7">
+                                    <input id="base_products_category" type="text"
+                                           placeholder="Enter Base Product Category"
+                                           class="form-control @error('base_products_category') is-invalid @enderror"
+                                           name="base_products_category"
+                                           value="{{ old('base_products_category') }}" required>
 
-                                    @error('category_url_1')
+                                    @error('base_products_category')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
 
@@ -77,15 +78,17 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="category_url_2" class="col-md-4 col-form-label text-md-right">Category URL
-                                    (2) *</label>
+                                <label for="compatible_products_category" class="col-md-4 col-form-label text-md-right">
+                                    Compatible Products Category *
+                                </label>
                                 <div class="col-md-6">
-                                    <input id="category_url_2" type="text" placeholder="/category/sub_category/"
-                                           class="form-control @error('category_url_2') is-invalid @enderror"
-                                           name="category_url_2"
-                                           value="{{ old('category_url_2') }}" required>
+                                    <input id="compatible_products_category" type="text"
+                                           placeholder=" Enter Compatible Products Category"
+                                           class="form-control @error('compatible_products_category') is-invalid @enderror"
+                                           name="compatible_products_category"
+                                           value="{{ old('compatible_products_category') }}" required>
 
-                                    @error('category_url_2')
+                                    @error('compatible_products_category')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
 
@@ -93,16 +96,17 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="category_url_3" class="col-md-4 col-form-label text-md-right">Category URL
-                                    (3) *</label>
+                                <label for="product_services_category" class="col-md-4 col-form-label text-md-right">
+                                    Service & Assembly Product Category *
+                                </label>
                                 <div class="col-md-6">
-                                    <input id="category_url_3" type="text"
-                                           placeholder="/category/sub_category/sub_sub_category"
-                                           class="form-control @error('category_url_3') is-invalid @enderror"
-                                           name="category_url_3"
-                                           value="{{ old('category_url_3') }}" required>
+                                    <input id="product_services_category" type="text"
+                                           placeholder=" Enter Service & Assembly Product Category "
+                                           class="form-control @error('product_services_category') is-invalid @enderror"
+                                           name="product_services_category"
+                                           value="{{ old('product_services_category') }}" required>
 
-                                    @error('category_url_3')
+                                    @error('product_services_category')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
 
@@ -114,7 +118,6 @@
                                     <button type="submit" class="btn btn-success text-white">
                                         Save
                                     </button>
-
                                 </div>
                             </div>
                         </form>
