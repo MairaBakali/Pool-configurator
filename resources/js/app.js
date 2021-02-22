@@ -5,18 +5,19 @@ import '@mdi/font/css/materialdesignicons.css'
 
 Vue.use(VueRouter)
 import app from './views/app.vue'
-import main from './views/main.vue'
+import main from './views/Main/main.vue'
 import About from './views/About.vue'
 import config from './views/config.vue'
 import pre from './views/pre.vue'
 import checkout from './views/checkout.vue'
+import summary from './views/summary.vue'
 
 import page from './views/page.vue'
 
 const router = new VueRouter({
     mode: 'history',
     routes: [{
-            path: '/home',
+            path: '/',
             name: 'app',
             component: app
         }, {
@@ -49,6 +50,11 @@ const router = new VueRouter({
             path: '/page',
             name: 'page',
             component: page
+        }, {
+            path: '/summary',
+            name: 'summary',
+            component: summary
+
         }
     ],
 });

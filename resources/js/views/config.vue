@@ -255,7 +255,7 @@ export default {
   },
   methods: {
     homepage() {
-      this.$router.push("/home");
+      this.$router.push("/");
     },
     disabledbutton() {
       this.enabled = false;
@@ -299,6 +299,9 @@ export default {
     this.getProducts();
     this.getProductsaceesories();
   },
+  emit() {
+    this.$emit("pool");
+  },
   components: {
     gardensize,
     myheader,
@@ -307,11 +310,6 @@ export default {
 };
 </script>
 <style scoped>
-#app {
-  background: white;
-  height: 100%;
-  width: 100%;
-}
 body {
   width: 100vw;
   height: 100vh;

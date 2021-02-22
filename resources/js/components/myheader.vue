@@ -79,40 +79,40 @@
   </v-app>
 </template>
 
-<script>
-import mainsheet from "../components/mainsheet.vue";
-export default {
-  data() {
-    return {
-      items: [
-        { title: "Startseite", link: "/home" },
-        { title: "Infos", link: "/help" },
-        { title: "Konfigurator", link: "/config" },
-      ],
-      drawer: false,
-      topbar: {
-        height: "80px",
-        mh: "85px",
-        sh: "55px", //small screen bar height
-        trans: "transparent",
-      },
-      textmargin: {
-        class: "mt-2 ",
-        font: "3.5vw 3.6vh",
-      },
-    };
-  },
-  methods: {
-    homepage() {
-      this.$router.push("/home");
-    },
-  },
-  components: {
-    mainsheet,
-  },
-};
-</script>
-<style lang="scss">
+<!--  <script>
+// import mainsheet from "../components/mainsheet.vue";
+// export default {
+//   data() {
+//     return {
+//       items: [
+//         { title: "Startseite", link: "/home" },
+//         { title: "Infos", link: "/help" },
+//         { title: "Konfigurator", link: "/config" },
+//       ],
+//       drawer: false,
+//       topbar: {
+//         height: "80px",
+//         mh: "85px",
+//         sh: "55px", //small screen bar height
+//         trans: "transparent",
+//       },
+//       textmargin: {
+//         class: "mt-2 ",
+//         font: "3.5vw 3.6vh",
+//       },
+//     };
+//   },
+//   methods: {
+//     homepage() {
+//       this.$router.push("/home");
+//     },
+//   },
+//   components: {
+//     mainsheet,
+//   },
+// };
+// </script>
+// <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
 .v-application--wrap {
@@ -203,3 +203,4 @@ img {
 }
 </style>
 
+-->

@@ -1,18 +1,13 @@
 <template>
   <v-app>
-    <myheader />
-    <v-main> </v-main>
+    <homepage />
   </v-app>
 </template>
 <script>
-import myheader from "../components/myheader.vue";
-import configurator from "../components/configurator.vue";
-import Mainsheet from "../components/mainsheet.vue";
+import homepage from "../components/Mainsheet/homepage.vue"
 export default {
   components: {
-    myheader,
-    configurator,
-    Mainsheet,
+    homepage
   },
 };
 </script>
