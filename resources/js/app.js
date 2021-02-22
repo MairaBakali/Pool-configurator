@@ -25,7 +25,7 @@ const router = new VueRouter({
             component: main
 
         }, {
-            path: '/budget',
+            path: '/help',
             name: 'About',
             component: About
         },
@@ -55,21 +55,18 @@ const router = new VueRouter({
 
 import 'vuetify/dist/vuetify.min.css'
 
-Vue.use(Vuetify);
+Vue.use(Vuetify, );
 import examplecomponent from './components/ExampleComponent.vue'
 
 
 new Vue({
     el: '#app',
-    vuetify: new Vuetify(),
+    vuetify: new Vuetify,
     router,
     components: {
         examplecomponent
     },
     icons: {
         iconfont: 'mdi', // default - only for display purposes
-    },
-    theme: {
-
     }
 });
