@@ -3,20 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bbd22710-c5fc-4076-8daf-f77f587dd53e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/APIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/APIController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Cron/JobsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Cron/JobsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreConfiguratorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreConfiguratorRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductLog.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_13_163600_create_config_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_13_163600_create_config_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_15_124952_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_15_124952_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_16_124356_create_product_logs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/configurator.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/configurator.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +183,7 @@
       <workItem from="1613731468286" duration="676000" />
       <workItem from="1613732196548" duration="24744000" />
       <workItem from="1613979811741" duration="5666000" />
+      <workItem from="1613999868938" duration="165000" />
     </task>
     <servers />
   </component>
@@ -221,10 +208,10 @@
     </state>
     <state x="-1182" y="6" key="SettingsEditor/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1613817743761" />
     <state x="-1148" y="13" key="SettingsEditor/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1613731178606" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1613979915212">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1614000028624">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1613979915212" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1614000028624" />
     <state x="-987" y="96" width="607" height="536" key="find.popup" timestamp="1613386346402">
       <screen x="-1366" y="0" width="1366" height="728" />
     </state>
