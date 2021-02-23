@@ -24,3 +24,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/base/products', [APIController::class, 'getBaseProducts']);
 Route::post('/compatible/products', [APIController::class, 'getCompatibleProduct']);
 Route::get('/product/services', [APIController::class, 'getProductService']);
+Route::post('/save/bundle-product',[APIController::class,'storeBundleProduct']);
+Route::get('/bundle-product',[APIController::class,'getBundleProducts']);
