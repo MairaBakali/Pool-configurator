@@ -2620,6 +2620,9 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
     },
     enablefifthstep: function enablefifthstep() {
       return this.filtercomplete = true;
+    },
+    homepage: function homepage() {
+      this.$router.push("/");
     }
   },
   mounted: function mounted() {

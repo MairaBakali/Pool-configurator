@@ -281,6 +281,9 @@ export default {
     enablefifthstep() {
       return (this.filtercomplete = true);
     },
+    homepage() {
+      this.$router.push("/");
+    },
   },
   mounted() {
     this.getProducts();
