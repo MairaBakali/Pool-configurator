@@ -8,6 +8,8 @@ use App\Models\Product;
 use App\Models\BundleProduct;
 use Response;
 use App\Helpers\HelperFunctions;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RequestOffer;
 
 class APIController extends Controller
 {
@@ -67,7 +69,12 @@ class APIController extends Controller
             $bundle_product->compatible_product_order_numbers = implode(",", $request->input('compatible_product_order_numbers'));
             $bundle_product->product_services_order_numbers = implode(",", $request->input('product_services_order_numbers'));
             $bundle_product->status = $request->input('status');
-            $bundle_product->save();
+            $res = $bundle_product->save();
+            // Send Email on Bundle Save
+            if ($res) {
+                $data = $this->getBundleProducts($request,($bundle_product->id),true);
+                Mail::to('isfhan729@gmail.com')->send(new RequestOffer($data));
+            }
 
             // creating response
             $response = HelperFunctions::createResponse(['id'=>$bundle_product->id]);
@@ -83,28 +90,42 @@ class APIController extends Controller
         }
     }
 
-    public function getBundleProducts(Request $request)
+    public function getBundleProducts(Request $request, $id = null,$function_call_inside_class = false)
     {
         // Set limit and offset
         $limit = $request->query('limit') ? $request->query('limit') : 10;
         $offset = $request->query('offset') ? $request->query('offset') : 0;
 
-        $bundle = [];
-        $bundle_products = BundleProduct::where('status', 1)->offset($offset)->limit($limit)->get();
-        foreach ($bundle_products as $bundle_product) {
-            $data = [];
-            $base_product = Product::where('order_number', $bundle_product['base_product_order_number'])->offset($offset)->limit($limit)->get()->toArray();
-            $data['base_product'] = $base_product[0];
 
-            $compatible_products = Product::wherein('order_number', explode(",", $bundle_product['compatible_product_order_numbers']))->offset($offset)->limit($limit)->get()->toArray();
-            $data['compatible_products'] = $compatible_products;
-
-            $product_services = Product::wherein('order_number', explode(",", $bundle_product['product_services_order_numbers']))->offset($offset)->limit($limit)->get()->toArray();
-            $data['product_services'] = $product_services;
-
-            $bundle[] = $data;
+        if($id){
+            $bundle = '';
+            $bundle_products = BundleProduct::where('id', $id)->where('status', 1)->get();
+        } else {
+            $bundle = [];
+            $bundle_products = BundleProduct::where('status', 1)->offset($offset)->limit($limit)->get();
         }
 
+        foreach ($bundle_products as $bundle_product) {
+            $data = [];
+            $base_product = Product::where('order_number', $bundle_product['base_product_order_number'])->get()->toArray();
+            $data['base_product'] = $base_product[0];
+
+            $compatible_products = Product::wherein('order_number', explode(",", $bundle_product['compatible_product_order_numbers']))->get()->toArray();
+            $data['compatible_products'] = $compatible_products;
+
+            $product_services = Product::wherein('order_number', explode(",", $bundle_product['product_services_order_numbers']))->get()->toArray();
+            $data['product_services'] = $product_services;
+
+            if($id){
+                $bundle = $data;
+            } else {
+                $bundle[] = $data;
+            }
+        }
+
+        if($function_call_inside_class){
+            return $bundle;
+        }
         // creating response
         $response = HelperFunctions::createResponse($bundle);
         $status = 200;
