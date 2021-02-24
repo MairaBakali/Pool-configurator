@@ -16,30 +16,38 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer">
             </v-app-bar-nav-icon>
           </div>
-          <div class="hidden-xs-only">
+          <div class="mr-4 hidden-xs-only">
             <v-btn x-small text>
               <v-icon left dark small color="#FFFFFF"> mdi-information </v-icon>
-              <p class="mt-4 infotext">Infos und Hinweise</p>
+              <p class="mt-4 mr-2 infotext">Infos und Hinweise</p>
             </v-btn>
           </div>
         </v-app-bar>
         <v-toolbar color="#EF7D01" height="7px" max-height="8px"></v-toolbar>
       </div>
       <div class="sheet">
-        <h3>Herzlich willkommen im Cranpool Konfigurator!</h3>
+        <h3>
+          Herzlich willkommen <br />
+          im Cranpool Konfigurator!
+        </h3>
         <span class="hidden-sm-and-down">
-          <v-row class="mt-10" align="center" justify="center">
-            <button @click="configpage()" class="lg-button">
+          <v-row class="mt-12" align="center" justify="center">
+            <button @click="configpage()" class="mt-5 lg-button">
               <v-icon color="white" x-large>mdi-swim</v-icon>
 
               <h5>Jetzt Ihren Traumpool konfigurieren!</h5>
             </button>
           </v-row>
           <v-row class="mt-12" align="center" justify="center">
-            <button @click="helppage()" large class="sm-button">
+            <v-btn
+              rounded
+              @click="helppage()"
+              small
+              class="white--text sm-button"
+            >
               <v-icon color="white">mdi-help-circle-outline</v-icon>
-              Benötigen Sie Hilfe?
-            </button>
+              <span> Benötigen Sie Hilfe? </span>
+            </v-btn>
           </v-row>
         </span>
         <span class="hidden-md-and-up">

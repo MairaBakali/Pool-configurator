@@ -193,6 +193,7 @@
               </v-expand-transition>
             </v-col>
             <v-col cols="7">
+<<<<<<< HEAD
               <div>
                 <v-row v-show="show" class="mt-12 text--center">
                   <span class="text">
@@ -202,12 +203,19 @@
                 </v-row>
 
                 <v-row v-show="showground" class="mt-12 text--center">
+=======
+              <div v-show="show">budget slider</div>
+
+              <div v-show="showground">
+                <v-row class="mt-12 text--center">
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
                   <span class="text"
                     >Diese pools haben sich andere kunden angesehen:</span
                   >
                 </v-row>
                 <!-- bundleProduct start -->
                 <v-row>
+<<<<<<< HEAD
                   <v-col
                     sm="6"
                     md="4"
@@ -236,7 +244,51 @@
                   </v-col>
                 </v-row>
                 <!-- bundleProduct end -->
+=======
+                  <v-col sm="6" md="4" v-for="(bundleProduct,index) in bundleProducts" :key="index">
+                    <v-card class="my-10" height="221" width="231" outlined>
+                      <v-card-actions>
+                        <v-checkbox :value="index" @change="getSelectedBundleIndex(index)">
+                        </v-checkbox>
+                      </v-card-actions>
+                      <v-img :src="bundleProduct.base_product.media.split('~')[0]" height="118" />
+                      <v-card-title>{{ bundleProduct.base_product.name }}</v-card-title>
+                      <v-card-subtitle>{{ bundleProduct.base_product.price }}</v-card-subtitle>
+                    </v-card>
+                  </v-col>
+                  <v-btn @click="enablethirdstep(); showground = !showground; showpool = !showpool;">
+                    Next
+                  </v-btn>
+                </v-row>
+                <!-- bundleProduct end -->
               </div>
+
+              <div v-show="showpool">
+                <v-row class="mt-12 text--center">
+                  <span class="text">POOL DISPLAY:</span>
+                </v-row>
+                <v-btn @click=" enablefourthstep(); showpool = !showpool; showfilters = !showfilters;">
+                  NEXT
+                  </v-btn>
+              </div>
+
+              <div v-show="showfilters">
+                <v-row class="mt-12 text--center">
+                  <span class="text">Filters Display</span>
+                </v-row>
+                <v-btn @click="enablefifthstep(); showfilters = !showfilters; showservice = !showservice;">
+                  NEXT
+                </v-btn>
+              </div>
+
+              <div v-show="showservice">
+                <v-row class="mt-12 text--center">
+                  <span class="text">SERVICE Display</span>
+                </v-row>
+                <v-btn to="/summary"> NEXT</v-btn>
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
+              </div>
+
             </v-col>
           </v-row>
         </div>
@@ -250,12 +302,18 @@ const axios = require("axios");
 export default {
   data() {
     return {
+<<<<<<< HEAD
       min: 0,
       max: 10000,
       range: [0, 10000],
       bundleProducts: [],
       selectedBundleIndex: [],
       show: true,
+=======
+      bundleProducts: [],
+      selectedBundleIndex: [],
+      show: false,
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
       cardstyle: {
         color: "#EFEFEF",
         wdth: "100%",
@@ -282,7 +340,11 @@ export default {
       return (this.budgetcomplete = true);
     },
     enablethirdstep() {
+<<<<<<< HEAD
       console.log(this.selectedBundleIndex);
+=======
+      console.log(this.selectedBundleIndex);
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
       return (this.groundcomplete = true);
     },
     enablefourthstep() {
@@ -295,6 +357,7 @@ export default {
       this.$router.push("/");
     },
     getSelectedBundleIndex(index) {
+<<<<<<< HEAD
       if (this.selectedBundleIndex.includes(index)) {
         let position = this.selectedBundleIndex.indexOf(index);
         this.selectedBundleIndex.splice(position, 1);
@@ -307,5 +370,40 @@ export default {
     this.getBundleProducts();
 ();
  30px;
+=======
+      if (this.selectedBundleIndex.includes(index)){
+        let position = this.selectedBundleIndex.indexOf(index);
+        this.selectedBundleIndex.splice(position, 1);
+      }
+      else {
+        this.selectedBundleIndex.push(index);
+      }
+    },
+
+  },
+  mounted() {
+    this.getBundleProducts();
+  },
+};
+</script>
+<style scoped>
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  font-family: "Lato", sans-serif;
+  overflow-x: scroll;
+}
+.text {
+  color: dodgerblue;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 20%;
+}
+.title1 {
+  color: #ef7d01;
+  font-weight: bold;
+  margin-left: 30px;
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
 }
 </style>
