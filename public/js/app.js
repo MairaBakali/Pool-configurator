@@ -1919,6 +1919,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2788,13 +2789,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "routes": () => /* binding */ routes
 /* harmony export */ });
 /* harmony import */ var _views_app_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./views/app.vue */ "./resources/js/views/app.vue");
-/* harmony import */ var _views_Main_main_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/Main/main.vue */ "./resources/js/views/Main/main.vue");
-/* harmony import */ var _views_About_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/About.vue */ "./resources/js/views/About.vue");
-/* harmony import */ var _views_config_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/config.vue */ "./resources/js/views/config.vue");
-/* harmony import */ var _views_pre_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/pre.vue */ "./resources/js/views/pre.vue");
-/* harmony import */ var _views_checkout_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/checkout.vue */ "./resources/js/views/checkout.vue");
-/* harmony import */ var _views_summary_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/summary.vue */ "./resources/js/views/summary.vue");
-
+/* harmony import */ var _views_About_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/About.vue */ "./resources/js/views/About.vue");
+/* harmony import */ var _views_config_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/config.vue */ "./resources/js/views/config.vue");
+/* harmony import */ var _views_pre_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/pre.vue */ "./resources/js/views/pre.vue");
+/* harmony import */ var _views_checkout_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/checkout.vue */ "./resources/js/views/checkout.vue");
+/* harmony import */ var _views_summary_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/summary.vue */ "./resources/js/views/summary.vue");
 
 
 
@@ -2806,29 +2805,25 @@ var routes = [{
   name: 'app',
   component: _views_app_vue__WEBPACK_IMPORTED_MODULE_0__.default
 }, {
-  path: '/main',
-  name: 'main',
-  component: _views_Main_main_vue__WEBPACK_IMPORTED_MODULE_1__.default
-}, {
   path: '/help',
   name: 'About',
-  component: _views_About_vue__WEBPACK_IMPORTED_MODULE_2__.default
+  component: _views_About_vue__WEBPACK_IMPORTED_MODULE_1__.default
 }, {
   path: '/config',
   name: 'config',
-  component: _views_config_vue__WEBPACK_IMPORTED_MODULE_3__.default
+  component: _views_config_vue__WEBPACK_IMPORTED_MODULE_2__.default
 }, {
   path: '/pre',
   name: 'pre',
-  component: _views_pre_vue__WEBPACK_IMPORTED_MODULE_4__.default
+  component: _views_pre_vue__WEBPACK_IMPORTED_MODULE_3__.default
 }, {
   path: '/checkout',
   name: 'checkout',
-  component: _views_checkout_vue__WEBPACK_IMPORTED_MODULE_5__.default
+  component: _views_checkout_vue__WEBPACK_IMPORTED_MODULE_4__.default
 }, {
   path: '/summary',
   name: 'summary',
-  component: _views_summary_vue__WEBPACK_IMPORTED_MODULE_6__.default
+  component: _views_summary_vue__WEBPACK_IMPORTED_MODULE_5__.default
 }];
 
 /***/ }),
@@ -2950,7 +2945,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2998,7 +2993,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.summary {\r\n  text-align: center;\r\n  color: #ef7d01;\n}\n.title {\r\n  color: #ef7d01;\r\n  text-align: center;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.summary {\n  text-align: center;\n  color: #ef7d01;\n}\n.title {\n  color: #ef7d01;\n  text-align: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3998,40 +3993,6 @@ component.options.__file = "resources/js/views/About.vue"
 
 /***/ }),
 
-/***/ "./resources/js/views/Main/main.vue":
-/*!******************************************!*\
-  !*** ./resources/js/views/Main/main.vue ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__.default)(
-  script,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "resources/js/views/Main/main.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
 /***/ "./resources/js/views/app.vue":
 /*!************************************!*\
   !*** ./resources/js/views/app.vue ***!
@@ -4553,7 +4514,11 @@ var render = function() {
                 )
               ],
               1
-            )
+            ),
+            _vm._v(" "),
+            _c("v-toolbar", {
+              attrs: { color: "#EF7D01", height: "7px", "max-height": "8px" }
+            })
           ],
           1
         ),

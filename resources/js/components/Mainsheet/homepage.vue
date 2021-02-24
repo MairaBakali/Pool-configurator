@@ -23,6 +23,7 @@
             </v-btn>
           </div>
         </v-app-bar>
+        <v-toolbar color="#EF7D01" height="7px" max-height="8px"></v-toolbar>
       </div>
       <div class="sheet">
         <h3>Herzlich willkommen im Cranpool Konfigurator!</h3>
