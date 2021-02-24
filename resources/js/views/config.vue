@@ -165,74 +165,58 @@
             </v-col>
             <v-col cols="7">
               <div v-show="show">budget slider</div>
+
               <div v-show="showground">
                 <v-row class="mt-12 text--center">
                   <span class="text"
                     >Diese pools haben sich andere kunden angesehen:</span
                   >
                 </v-row>
+                <!-- bundleProduct start -->
                 <v-row>
-                  <v-col
-                    sm="6"
-                    md="4"
-                    v-for="products in product"
-                    :key="product.name"
-                  >
+                  <v-col sm="6" md="4" v-for="(bundleProduct,index) in bundleProducts" :key="index">
                     <v-card class="my-10" height="221" width="231" outlined>
                       <v-card-actions>
-                        <v-checkbox :value="products.id" v-model="pool">
+                        <v-checkbox :value="index" @change="getSelectedBundleIndex(index)">
                         </v-checkbox>
                       </v-card-actions>
-                      <v-img :src="products.media" height="118" />
-                      <v-card-title>{{ products.name }}</v-card-title>
-                      <v-card-subtitle>{{ products.price }}</v-card-subtitle>
+                      <v-img :src="bundleProduct.base_product.media.split('~')[0]" height="118" />
+                      <v-card-title>{{ bundleProduct.base_product.name }}</v-card-title>
+                      <v-card-subtitle>{{ bundleProduct.base_product.price }}</v-card-subtitle>
                     </v-card>
                   </v-col>
-                  <v-btn
-                    @click="
-                      enablethirdstep();
-                      showground = !showground;
-                      showpool = !showpool;
-                    "
-                  >
-                    Next</v-btn
-                  >
+                  <v-btn @click="enablethirdstep(); showground = !showground; showpool = !showpool;">
+                    Next
+                  </v-btn>
                 </v-row>
+                <!-- bundleProduct end -->
               </div>
+
               <div v-show="showpool">
                 <v-row class="mt-12 text--center">
                   <span class="text">POOL DISPLAY:</span>
                 </v-row>
-                <v-btn
-                  @click="
-                    enablefourthstep();
-                    showpool = !showpool;
-                    showfilters = !showfilters;
-                  "
-                >
-                  NEXT</v-btn
-                >
+                <v-btn @click=" enablefourthstep(); showpool = !showpool; showfilters = !showfilters;">
+                  NEXT
+                  </v-btn>
               </div>
+
               <div v-show="showfilters">
                 <v-row class="mt-12 text--center">
                   <span class="text">Filters Display</span>
                 </v-row>
-                <v-btn
-                  @click="
-                    enablefifthstep();
-                    showfilters = !showfilters;
-                    showservice = !showservice;
-                  "
-                >
-                  NEXT</v-btn
-                >
+                <v-btn @click="enablefifthstep(); showfilters = !showfilters; showservice = !showservice;">
+                  NEXT
+                </v-btn>
               </div>
+
               <div v-show="showservice">
                 <v-row class="mt-12 text--center">
                   <span class="text">SERVICE Display</span>
                 </v-row>
                 <v-btn to="/summary"> NEXT</v-btn>
               </div>
+
             </v-col>
           </v-row>
         </div>
@@ -246,8 +230,8 @@ const axios = require("axios");
 export default {
   data() {
     return {
-      product: [],
-      pool: "",
+      bundleProducts: [],
+      selectedBundleIndex: [],
       show: false,
       cardstyle: {
         color: "#EFEFEF",
@@ -265,15 +249,18 @@ export default {
     };
   },
   methods: {
-    getProducts() {
-      axios.get("./api/products").then((response) => {
-        this.product = response.data;
+
+    getBundleProducts() {
+      axios.get("./api/bundle-product").then((response) => {
+        console.log(response.data);
+        this.bundleProducts = response.data.data;
       });
     },
     enablesecondstep() {
       return (this.budgetcomplete = true);
     },
     enablethirdstep() {
+      console.log(this.selectedBundleIndex); 
       return (this.groundcomplete = true);
     },
     enablefourthstep() {
@@ -285,9 +272,19 @@ export default {
     homepage() {
       this.$router.push("/");
     },
+    getSelectedBundleIndex(index) {
+      if (this.selectedBundleIndex.includes(index)){
+        let position = this.selectedBundleIndex.indexOf(index);
+        this.selectedBundleIndex.splice(position, 1);
+      }
+      else {
+        this.selectedBundleIndex.push(index);
+      }
+    },
+
   },
   mounted() {
-    this.getProducts();
+    this.getBundleProducts();
   },
 };
 </script>

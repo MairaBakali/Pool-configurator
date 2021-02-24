@@ -2564,29 +2564,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      product: [],
-      pool: "",
+      bundleProducts: [],
+      selectedBundleIndex: [],
       show: false,
       cardstyle: {
         color: "#EFEFEF",
@@ -2604,17 +2588,19 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
     };
   },
   methods: {
-    getProducts: function getProducts() {
+    getBundleProducts: function getBundleProducts() {
       var _this = this;
 
-      axios.get("./api/products").then(function (response) {
-        _this.product = response.data;
+      axios.get("./api/bundle-product").then(function (response) {
+        console.log(response.data);
+        _this.bundleProducts = response.data.data;
       });
     },
     enablesecondstep: function enablesecondstep() {
       return this.budgetcomplete = true;
     },
     enablethirdstep: function enablethirdstep() {
+      console.log(this.selectedBundleIndex);
       return this.groundcomplete = true;
     },
     enablefourthstep: function enablefourthstep() {
@@ -2625,10 +2611,18 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
     },
     homepage: function homepage() {
       this.$router.push("/");
+    },
+    getSelectedBundleIndex: function getSelectedBundleIndex(index) {
+      if (this.selectedBundleIndex.includes(index)) {
+        var position = this.selectedBundleIndex.indexOf(index);
+        this.selectedBundleIndex.splice(position, 1);
+      } else {
+        this.selectedBundleIndex.push(index);
+      }
     }
   },
   mounted: function mounted() {
-    this.getProducts();
+    this.getBundleProducts();
   }
 });
 
@@ -2970,7 +2964,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-713af001] {\n  width: 100vw;\n  height: 100vh;\n  overflow: scroll;\n  font-family: \"Lato\", sans-serif;\n  overflow-x: scroll;\n}\n.text[data-v-713af001] {\n  color: dodgerblue;\n  text-align: center;\n  font-size: 20px;\n  margin-left: 20%;\n}\n.title1[data-v-713af001] {\n  color: #ef7d01;\n  font-weight: bold;\n  margin-left: 30px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-713af001] {\r\n  width: 100vw;\r\n  height: 100vh;\r\n  overflow: scroll;\r\n  font-family: \"Lato\", sans-serif;\r\n  overflow-x: scroll;\n}\n.text[data-v-713af001] {\r\n  color: dodgerblue;\r\n  text-align: center;\r\n  font-size: 20px;\r\n  margin-left: 20%;\n}\n.title1[data-v-713af001] {\r\n  color: #ef7d01;\r\n  font-weight: bold;\r\n  margin-left: 30px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5990,13 +5984,13 @@ var render = function() {
                         _c(
                           "v-row",
                           [
-                            _vm._l(_vm.product, function(products) {
+                            _vm._l(_vm.bundleProducts, function(
+                              bundleProduct,
+                              index
+                            ) {
                               return _c(
                                 "v-col",
-                                {
-                                  key: _vm.product.name,
-                                  attrs: { sm: "6", md: "4" }
-                                },
+                                { key: index, attrs: { sm: "6", md: "4" } },
                                 [
                                   _c(
                                     "v-card",
@@ -6013,13 +6007,13 @@ var render = function() {
                                         "v-card-actions",
                                         [
                                           _c("v-checkbox", {
-                                            attrs: { value: products.id },
-                                            model: {
-                                              value: _vm.pool,
-                                              callback: function($$v) {
-                                                _vm.pool = $$v
-                                              },
-                                              expression: "pool"
+                                            attrs: { value: index },
+                                            on: {
+                                              change: function($event) {
+                                                return _vm.getSelectedBundleIndex(
+                                                  index
+                                                )
+                                              }
                                             }
                                           })
                                         ],
@@ -6028,17 +6022,27 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("v-img", {
                                         attrs: {
-                                          src: products.media,
+                                          src: bundleProduct.base_product.media.split(
+                                            "~"
+                                          )[0],
                                           height: "118"
                                         }
                                       }),
                                       _vm._v(" "),
                                       _c("v-card-title", [
-                                        _vm._v(_vm._s(products.name))
+                                        _vm._v(
+                                          _vm._s(
+                                            bundleProduct.base_product.name
+                                          )
+                                        )
                                       ]),
                                       _vm._v(" "),
                                       _c("v-card-subtitle", [
-                                        _vm._v(_vm._s(products.price))
+                                        _vm._v(
+                                          _vm._s(
+                                            bundleProduct.base_product.price
+                                          )
+                                        )
                                       ])
                                     ],
                                     1
@@ -6059,7 +6063,11 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("\n                  Next")]
+                              [
+                                _vm._v(
+                                  "\n                  Next\n                "
+                                )
+                              ]
                             )
                           ],
                           2
@@ -6098,7 +6106,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v("\n                NEXT")]
+                          [_vm._v("\n                NEXT\n                ")]
                         )
                       ],
                       1
@@ -6134,7 +6142,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v("\n                NEXT")]
+                          [_vm._v("\n                NEXT\n              ")]
                         )
                       ],
                       1
