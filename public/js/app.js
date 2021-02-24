@@ -2946,7 +2946,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2970,7 +2970,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-713af001] {\n  width: 100vw;\n  height: 100vh;\n  overflow: scroll;\n  font-family: \"Lato\", sans-serif;\n  overflow-x: scroll;\n}\n.text[data-v-713af001] {\n  color: dodgerblue;\n  text-align: center;\n  font-size: 20px;\n  margin-left: 20%;\n}\n.title1[data-v-713af001] {\n  color: #ef7d01;\n  font-weight: bold;\n  margin-left: 30px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-713af001] {\r\n  width: 100vw;\r\n  height: 100vh;\r\n  overflow: scroll;\r\n  font-family: \"Lato\", sans-serif;\r\n  overflow-x: scroll;\n}\n.text[data-v-713af001] {\r\n  color: dodgerblue;\r\n  text-align: center;\r\n  font-size: 20px;\r\n  margin-left: 20%;\n}\n.title1[data-v-713af001] {\r\n  color: #ef7d01;\r\n  font-weight: bold;\r\n  margin-left: 30px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2994,7 +2994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.summary {\r\n  text-align: center;\r\n  color: #ef7d01;\n}\n.title {\r\n  color: #ef7d01;\r\n  text-align: center;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.summary {\n  text-align: center;\n  color: #ef7d01;\n}\n.title {\n  color: #ef7d01;\n  text-align: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
