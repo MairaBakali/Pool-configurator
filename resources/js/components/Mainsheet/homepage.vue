@@ -46,7 +46,7 @@
             <button @click="configpage()" class="lg-button">
               <v-icon color="white" large>mdi-swim</v-icon>
 
-              <h4>Jetzt Ihren Traumpool konfigurieren!</h4>
+              <h4>Ihren Traumpool konfigurieren!</h4>
             </button>
           </v-row>
           <v-row class="mt-8" align="center" justify="center">

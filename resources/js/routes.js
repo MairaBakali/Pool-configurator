@@ -1,12 +1,10 @@
-import app from './views/app.vue'
-import main from './views/Main/main.vue'
-import About from './views/About.vue'
-import config from './views/config.vue'
-import pre from './views/pre.vue'
-import checkout from './views/checkout.vue'
-import summary from './views/summary.vue'
-import page from './views/page.vue'
-import VueRouter from "vue-router";
+import app from './views/app.vue';
+import main from './views/Main/main.vue';
+import About from './views/About.vue';
+import config from './views/config.vue';
+import pre from './views/pre.vue';
+import checkout from './views/checkout.vue';
+import summary from './views/summary.vue';
 
 export const routes = [
     {
@@ -38,11 +36,6 @@ export const routes = [
         path: '/checkout',
         name: 'checkout',
         component: checkout
-    },
-    {
-        path: '/page',
-        name: 'page',
-        component: page
     }, {
         path: '/summary',
         name: 'summary',
