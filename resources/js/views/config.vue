@@ -31,10 +31,10 @@
           <!-- This is the category column -->
           <div class="category">
             <v-card
+              flat
               :height="cardstyle.ht"
               :width="cardstyle.wdth"
               :color="cardstyle.color"
-              :active-class="cardstyle.activecolor"
             >
               <v-card-actions>
                 <v-card-text @click="show = !show">Budget </v-card-text>
@@ -50,7 +50,37 @@
               <div v-show="show">
                 <v-divider></v-divider>
 
-                <v-card-text> Budget Card </v-card-text>
+                <v-range-slider
+                  v-model="range"
+                  :max="max"
+                  :min="min"
+                  hide-details
+                  class="align-center"
+                >
+                  <template v-slot:prepend>
+                    <v-text-field
+                      :value="range[0]"
+                      class="mt-0 pt-0"
+                      hide-details
+                      single-line
+                      type="number"
+                      style="width: 60px"
+                      @change="$set(range, 0, $event)"
+                    ></v-text-field>
+                  </template>
+                  <template v-slot:append>
+                    <v-text-field
+                      :value="range[1]"
+                      class="mt-0 pt-0"
+                      hide-details
+                      single-line
+                      type="number"
+                      style="width: 60px"
+                      @change="$set(range, 1, $event)"
+                    ></v-text-field>
+                  </template>
+                </v-range-slider>
+                <br />
                 <v-spacer></v-spacer>
                 <v-btn
                   @click="
@@ -185,7 +215,7 @@
                 <v-divider></v-divider>
                 <v-row class="ml-5">
                   <v-card
-                    v-for="item in products.slice(0, 3)"
+                    v-for="item in products"
                     :key="item"
                     class="mx-5 mt-7"
                     max-width="30vh"
@@ -213,7 +243,7 @@
                     Previous Step
                   </v-btn>
                   <v-spacer></v-spacer>
-                  <v-btn @click="alertfunc" :disabled="!enabled">
+                  <v-btn to="/summary" @click="alertfunc" :disabled="!enabled">
                     Next Step
                   </v-btn>
                 </v-row>
@@ -233,6 +263,9 @@ import budget from "../components/budget.vue";
 export default {
   data() {
     return {
+      min: 0,
+      max: 10000,
+      range: [0, 10000],
       products: [],
       productsaccessories: [],
       pool: "",
@@ -249,7 +282,7 @@ export default {
         activecolor: "blue",
         color: "#EFEFEF",
         wdth: "40vw",
-        ht: "8.4vh",
+        ht: "9vh",
       },
     };
   },
@@ -313,6 +346,7 @@ export default {
 body {
   width: 100vw;
   height: 100vh;
+
   font-family: "Lato", sans-serif;
 }
 .cardstyle {
@@ -325,8 +359,5 @@ body {
 }
 .item {
   background-color: #ffffff;
-}
-.pool {
-  scroll-behavior: auto;
 }
 </style>
