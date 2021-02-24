@@ -216,6 +216,7 @@
                 <!-- bundleProduct start -->
                 <v-row>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <v-col
                     sm="6"
                     md="4"
@@ -261,6 +262,24 @@
                   </v-btn>
                 </v-row>
                 <!-- bundleProduct end -->
+=======
+                  <v-col sm="6" md="4" v-for="(bundleProduct,index) in bundleProducts" :key="index">
+                    <v-card class="my-10" height="221" width="231" outlined>
+                      <v-card-actions>
+                        <v-checkbox :value="index" @change="getSelectedBundleIndex(index)">
+                        </v-checkbox>
+                      </v-card-actions>
+                      <v-img :src="bundleProduct.base_product.media.split('~')[0]" height="118" />
+                      <v-card-title>{{ bundleProduct.base_product.name }}</v-card-title>
+                      <v-card-subtitle>{{ bundleProduct.base_product.price }}</v-card-subtitle>
+                    </v-card>
+                  </v-col>
+                  <v-btn @click="enablethirdstep(); showground = !showground; showpool = !showpool;">
+                    Next
+                  </v-btn>
+                </v-row>
+                <!-- bundleProduct end -->
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
               </div>
 
               <div v-show="showpool">
@@ -303,6 +322,7 @@ export default {
   data() {
     return {
 <<<<<<< HEAD
+<<<<<<< HEAD
       min: 0,
       max: 10000,
       range: [0, 10000],
@@ -310,6 +330,8 @@ export default {
       selectedBundleIndex: [],
       show: true,
 =======
+=======
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
       bundleProducts: [],
       selectedBundleIndex: [],
       show: false,
@@ -330,6 +352,10 @@ export default {
     };
   },
   methods: {
+<<<<<<< HEAD
+=======
+
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
     getBundleProducts() {
       axios.get("./api/bundle-product").then((response) => {
         console.log(response.data);
@@ -341,9 +367,13 @@ export default {
     },
     enablethirdstep() {
 <<<<<<< HEAD
+<<<<<<< HEAD
       console.log(this.selectedBundleIndex);
 =======
       console.log(this.selectedBundleIndex);
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
+=======
+      console.log(this.selectedBundleIndex); 
 >>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
       return (this.groundcomplete = true);
     },
@@ -358,6 +388,7 @@ export default {
     },
     getSelectedBundleIndex(index) {
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (this.selectedBundleIndex.includes(index)) {
         let position = this.selectedBundleIndex.indexOf(index);
         this.selectedBundleIndex.splice(position, 1);
@@ -371,6 +402,8 @@ export default {
 ();
  30px;
 =======
+=======
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
       if (this.selectedBundleIndex.includes(index)){
         let position = this.selectedBundleIndex.indexOf(index);
         this.selectedBundleIndex.splice(position, 1);

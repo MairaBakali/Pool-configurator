@@ -2409,6 +2409,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2429,6 +2430,189 @@ __webpack_require__.r(__webpack_exports__);
         name: "SERVICE- UND MONTAGEOPTIONEN",
         value: "5"
       }],
+=======
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      bundleProducts: [],
+      selectedBundleIndex: [],
+      show: false,
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
       cardstyle: {
         color: "#EFEFEF",
         wdth: "100%",
@@ -2438,9 +2622,47 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+<<<<<<< HEAD
     enable: function enable() {
       return this.nextstep = true;
     }
+=======
+    getBundleProducts: function getBundleProducts() {
+      var _this = this;
+
+      axios.get("./api/bundle-product").then(function (response) {
+        console.log(response.data);
+        _this.bundleProducts = response.data.data;
+      });
+    },
+    enablesecondstep: function enablesecondstep() {
+      return this.budgetcomplete = true;
+    },
+    enablethirdstep: function enablethirdstep() {
+      console.log(this.selectedBundleIndex);
+      return this.groundcomplete = true;
+    },
+    enablefourthstep: function enablefourthstep() {
+      return this.poolcomplete = true;
+    },
+    enablefifthstep: function enablefifthstep() {
+      return this.filtercomplete = true;
+    },
+    homepage: function homepage() {
+      this.$router.push("/");
+    },
+    getSelectedBundleIndex: function getSelectedBundleIndex(index) {
+      if (this.selectedBundleIndex.includes(index)) {
+        var position = this.selectedBundleIndex.indexOf(index);
+        this.selectedBundleIndex.splice(position, 1);
+      } else {
+        this.selectedBundleIndex.push(index);
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.getBundleProducts();
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
   }
 });
 
@@ -2769,7 +2991,26 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\r\n", ""]);
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/config.vue?vue&type=style&index=0&id=713af001&scoped=true&lang=css& ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+<<<<<<< HEAD
 /***/ (() => {
+=======
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-713af001] {\r\n  width: 100vw;\r\n  height: 100vh;\r\n  overflow: scroll;\r\n  font-family: \"Lato\", sans-serif;\r\n  overflow-x: scroll;\n}\n.text[data-v-713af001] {\r\n  color: dodgerblue;\r\n  text-align: center;\r\n  font-size: 20px;\r\n  margin-left: 20%;\n}\n.title1[data-v-713af001] {\r\n  color: #ef7d01;\r\n  font-weight: bold;\r\n  margin-left: 30px;\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
 
 throw new Error("Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\nSyntaxError\n\n(411:1) C:\\Users\\maira\\Pool-configurator\\resources\\js\\views\\config.vue Unknown word\n\n \u001b[90m 409 | \u001b[39m  font-weight\u001b[33m:\u001b[39m bold\u001b[33m;\u001b[39m\n \u001b[90m 410 | \u001b[39m  margin-left\u001b[33m:\u001b[39m 30px\u001b[33m;\u001b[39m\n\u001b[1m\u001b[31m>\u001b[39m\u001b[22m\u001b[90m 411 | \u001b[39m>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96\n \u001b[90m     | \u001b[39m\u001b[1m\u001b[31m^\u001b[39m\u001b[22m\n \u001b[90m 412 | \u001b[39m\u001b[33m}\u001b[39m\n \u001b[90m 413 | \u001b[39m\n");
 
@@ -5362,8 +5603,109 @@ var render = function() {
                       "v-stepper-step",
                       { attrs: { complete: _vm.e6 > i, step: "i" } },
                       [
+<<<<<<< HEAD
                         _vm._v(
                           "\n            " + _vm._s(item.name) + "\n          "
+=======
+                        _c("v-row", { staticClass: "mt-12 text--center" }, [
+                          _c("span", { staticClass: "text" }, [
+                            _vm._v(
+                              "Diese pools haben sich andere kunden angesehen:"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-row",
+                          [
+                            _vm._l(_vm.bundleProducts, function(
+                              bundleProduct,
+                              index
+                            ) {
+                              return _c(
+                                "v-col",
+                                { key: index, attrs: { sm: "6", md: "4" } },
+                                [
+                                  _c(
+                                    "v-card",
+                                    {
+                                      staticClass: "my-10",
+                                      attrs: {
+                                        height: "221",
+                                        width: "231",
+                                        outlined: ""
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c("v-checkbox", {
+                                            attrs: { value: index },
+                                            on: {
+                                              change: function($event) {
+                                                return _vm.getSelectedBundleIndex(
+                                                  index
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c("v-img", {
+                                        attrs: {
+                                          src: bundleProduct.base_product.media.split(
+                                            "~"
+                                          )[0],
+                                          height: "118"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("v-card-title", [
+                                        _vm._v(
+                                          _vm._s(
+                                            bundleProduct.base_product.name
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("v-card-subtitle", [
+                                        _vm._v(
+                                          _vm._s(
+                                            bundleProduct.base_product.price
+                                          )
+                                        )
+                                      ])
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.enablethirdstep()
+                                    _vm.showground = !_vm.showground
+                                    _vm.showpool = !_vm.showpool
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Next\n                "
+                                )
+                              ]
+                            )
+                          ],
+                          2
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
                         )
                       ]
                     ),
@@ -5387,8 +5729,71 @@ var render = function() {
                               }
                             }
                           },
+<<<<<<< HEAD
                           [_vm._v(" Continue ")]
                         ),
+=======
+                          [_vm._v("\n                NEXT\n                ")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.showfilters,
+                            expression: "showfilters"
+                          }
+                        ]
+                      },
+                      [
+                        _c("v-row", { staticClass: "mt-12 text--center" }, [
+                          _c("span", { staticClass: "text" }, [
+                            _vm._v("Filters Display")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-btn",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.enablefifthstep()
+                                _vm.showfilters = !_vm.showfilters
+                                _vm.showservice = !_vm.showservice
+                              }
+                            }
+                          },
+                          [_vm._v("\n                NEXT\n              ")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.showservice,
+                            expression: "showservice"
+                          }
+                        ]
+                      },
+                      [
+                        _c("v-row", { staticClass: "mt-12 text--center" }, [
+                          _c("span", { staticClass: "text" }, [
+                            _vm._v("SERVICE Display")
+                          ])
+                        ]),
+>>>>>>> b4b3361c7081b9f4edb8e04082ea222067ac9c96
                         _vm._v(" "),
                         _c("v-btn", { attrs: { text: "" } }, [
                           _vm._v(" Cancel ")
