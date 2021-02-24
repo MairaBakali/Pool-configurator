@@ -2584,6 +2584,7 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
   data: function data() {
     return {
       product: [],
+      accessories: [],
       pool: "",
       show: false,
       cardstyle: {
@@ -2609,6 +2610,13 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
         _this.product = response.data;
       });
     },
+    getAccessories: function getAccessories() {
+      var _this2 = this;
+
+      axios.get("./api/product/accessories").then(function (response) {
+        _this2.accessories = response.data;
+      });
+    },
     enablesecondstep: function enablesecondstep() {
       return this.budgetcomplete = true;
     },
@@ -2627,6 +2635,7 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
   },
   mounted: function mounted() {
     this.getProducts();
+    this.getAccessories();
   }
 });
 
@@ -6105,7 +6114,7 @@ var render = function() {
                               click: function($event) {
                                 _vm.enablefourthstep()
                                 _vm.showpool = !_vm.showpool
-                                _vm.showfilter = !_vm.showfilter
+                                _vm.showfilters = !_vm.showfilters
                               }
                             }
                           },
@@ -6122,8 +6131,8 @@ var render = function() {
                           {
                             name: "show",
                             rawName: "v-show",
-                            value: _vm.showfilter,
-                            expression: "showfilter"
+                            value: _vm.showfilters,
+                            expression: "showfilters"
                           }
                         ]
                       },
@@ -6140,7 +6149,7 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 _vm.enablefifthstep()
-                                _vm.showfilter = !_vm.showfilter
+                                _vm.showfilters = !_vm.showfilters
                                 _vm.showservice = !_vm.showservice
                               }
                             }

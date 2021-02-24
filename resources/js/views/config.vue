@@ -207,20 +207,20 @@
                   @click="
                     enablefourthstep();
                     showpool = !showpool;
-                    showfilter = !showfilter;
+                    showfilters = !showfilters;
                   "
                 >
                   NEXT</v-btn
                 >
               </div>
-              <div v-show="showfilter">
+              <div v-show="showfilters">
                 <v-row class="mt-12 text--center">
                   <span class="text">Filters Display</span>
                 </v-row>
                 <v-btn
                   @click="
                     enablefifthstep();
-                    showfilter = !showfilter;
+                    showfilters = !showfilters;
                     showservice = !showservice;
                   "
                 >
@@ -246,6 +246,7 @@ export default {
   data() {
     return {
       product: [],
+      accessories: [],
       pool: "",
       show: false,
       cardstyle: {
@@ -269,6 +270,11 @@ export default {
         this.product = response.data;
       });
     },
+    getAccessories() {
+      axios.get("./api/product/accessories").then((response) => {
+        this.accessories = response.data;
+      });
+    },
     enablesecondstep() {
       return (this.budgetcomplete = true);
     },
@@ -287,6 +293,7 @@ export default {
   },
   mounted() {
     this.getProducts();
+    this.getAccessories();
   },
 };
 </script>
