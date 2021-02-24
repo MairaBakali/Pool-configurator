@@ -19,6 +19,7 @@ Route::get('/admin', [AdminController::class,'index']);
 Route::post('/save/configurator', [AdminController::class,'store']);
 Route::get('/fetch/shopware/products',[JobsController::class,'fetchProductFromShopware']);
 
+// Route for frontend vue
 Route::get('/{any}', function () {
-    return view('home');
+    return view('index');
 })->where('any', '.*');
