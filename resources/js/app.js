@@ -12,8 +12,6 @@ import pre from './views/pre.vue'
 import checkout from './views/checkout.vue'
 import summary from './views/summary.vue'
 
-import page from './views/page.vue'
-
 const router = new VueRouter({
     mode: 'history',
     routes: [{
@@ -45,11 +43,6 @@ const router = new VueRouter({
             path: '/checkout',
             name: 'checkout',
             component: checkout
-        },
-        {
-            path: '/page',
-            name: 'page',
-            component: page
         }, {
             path: '/summary',
             name: 'summary',
