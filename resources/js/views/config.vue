@@ -207,20 +207,20 @@
                   @click="
                     enablefourthstep();
                     showpool = !showpool;
-                    showfilter = !showfilter;
+                    showfilters = !showfilters;
                   "
                 >
                   NEXT</v-btn
                 >
               </div>
-              <div v-show="showfilter">
+              <div v-show="showfilters">
                 <v-row class="mt-12 text--center">
                   <span class="text">Filters Display</span>
                 </v-row>
                 <v-btn
                   @click="
                     enablefifthstep();
-                    showfilter = !showfilter;
+                    showfilters = !showfilters;
                     showservice = !showservice;
                   "
                 >
@@ -240,6 +240,7 @@
     </div>
   </v-app>
 </template>
+
 <script>
 const axios = require("axios");
 export default {
