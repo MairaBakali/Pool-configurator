@@ -17,6 +17,10 @@
           <v-img src="https://i.ibb.co/mJXPTz2/Group-14-2x.jpg" />
         </div>
         <v-spacer></v-spacer>
+        <div class="hidden-md-and-up">
+          <v-app-bar-nav-icon @click.stop="drawer = !drawer">
+          </v-app-bar-nav-icon>
+        </div>
         <div class="hidden-sm-and-down">
           <v-btn large rounded color="#EF7D01" class="white--text">
             <v-icon color="white">mdi-format-list-bulleted</v-icon>
@@ -32,6 +36,25 @@
           </v-btn>
         </div>
       </v-app-bar>
+      <v-navigation-drawer
+        color="#efefef"
+        v-model="drawer"
+        right
+        temporary
+        absolute
+      >
+        <v-list>
+          <v-list-item
+            v-for="item in items"
+            :key="item.title"
+            :to="item.link"
+            link
+          >
+            <v-icon medium color="#ef7d01"> {{ item.icon }}</v-icon>
+            <h4 class="navigation_menu_items">{{ item.title }}</h4>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
     </div>
     <h1 class="summary">ZUSAMMENFASSUNG</h1>
     <v-main>
@@ -65,7 +88,11 @@
                   consectetur adipisicing elit. Asperiores consequatur deleniti
                   facere sint molestiae ducimus non quasi excepturi et!
                   Mollitia, illo? Culpa dignissimos, voluptatum incidunt
-                  pariatur amet minus dolorum harum.
+                  pariatur amet minus dolorum harum. Lorem ipsum, dolor sit amet
+                  consectetur adipisicing elit. Accusantium nostrum officiis
+                  fugit, distinctio exercitationem mollitia sunt, porro officia
+                  itaque tempora recusandae enim architecto vitae earum
+                  perspiciatis? Dolorem atque quia sapiente?
                 </v-card-text>
               </v-col>
             </v-row>
@@ -96,6 +123,12 @@ export default {
           image: "https://i.ibb.co/Jz9B63W/groundimage.png",
         },
       ],
+      drawer: false,
+      items: [
+        { title: "Startseite", link: "/", icon: "mdi-home" },
+        { title: "Infos", link: "/help", icon: "mdi-help-circle" },
+        { title: "Konfigurator", link: "/config", icon: "mdi-swim" },
+      ],
       cardstyles: {
         height: "7vh",
         color: "#efefef",
@@ -119,14 +152,13 @@ body {
   width: 100vw;
 }
 .summary {
-  font-size: 4vh;
-  font-size: 4vw;
   text-align: center;
   color: #ef7d01;
   font-weight: bolder;
   font-family: system-ui;
   letter-spacing: 0;
   margin-top: 2%;
+  font-size: x-large;
 }
 .category {
   width: 100%;
@@ -144,10 +176,14 @@ body {
   margin-top: 2vh;
   font-weight: bold;
   color: #444444;
+  font-size: large;
 }
 .title {
   color: #ef7d01;
   text-align: center;
+}
+.navigation_menu_items {
+  color: #707070;
 }
 .recommendation_button_text {
   text-transform: capitalize;
@@ -155,8 +191,10 @@ body {
   font-size: 0.8rem;
 }
 .container {
-  border: 2px solid black;
   width: 70%;
+  @media screen and (min-width: 600px) and (max-width: 890) and (min-height: 900) {
+    width: 100%;
+  }
 }
 
 .appbar-img {

@@ -2015,6 +2015,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
+/* harmony import */ var _About_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./About.vue */ "./resources/js/views/About.vue");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2273,28 +2276,159 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    About: _About_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
   data: function data() {
-    return {
+    var _ref;
+
+    return _ref = {
+      min: 0,
+      max: 1000,
+      range: [0, 1000],
       bundleProducts: [],
       selectedBundleIndex: [],
-      show: false,
+      filters: [],
+      ground: [{
+        name: "120m",
+        img: "https://i.ibb.co/Jz9B63W/groundimage.png"
+      }, {
+        name: "250m",
+        img: "https://i.ibb.co/Jz9B63W/groundimage.png"
+      }, {
+        name: "300m",
+        img: "https://i.ibb.co/Jz9B63W/groundimage.png"
+      }, {
+        name: "400m",
+        img: "https://i.ibb.co/Jz9B63W/groundimage.png"
+      }],
+      show: true,
       cardstyle: {
         color: "#EFEFEF",
         wdth: "100%",
         ht: "9vh"
-      },
-      showground: false,
-      showpool: false,
-      showfilters: false,
-      showservice: false,
-      budgetcomplete: false,
-      groundcomplete: false,
-      poolcomplete: false,
-      filtercomplete: false
-    };
+      }
+    }, _defineProperty(_ref, "ground", ""), _defineProperty(_ref, "showground", false), _defineProperty(_ref, "showpool", false), _defineProperty(_ref, "showfilters", false), _defineProperty(_ref, "showservice", false), _defineProperty(_ref, "budgetcomplete", false), _defineProperty(_ref, "groundcomplete", false), _defineProperty(_ref, "poolcomplete", false), _defineProperty(_ref, "filtercomplete", false), _ref;
   },
   methods: {
     getBundleProducts: function getBundleProducts() {
@@ -2428,6 +2562,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2441,6 +2602,20 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         name: "FILTER UND ZUBEHÖR",
         image: "https://i.ibb.co/Jz9B63W/groundimage.png"
+      }],
+      drawer: false,
+      items: [{
+        title: "Startseite",
+        link: "/",
+        icon: "mdi-home"
+      }, {
+        title: "Infos",
+        link: "/help",
+        icon: "mdi-help-circle"
+      }, {
+        title: "Konfigurator",
+        link: "/config",
+        icon: "mdi-swim"
       }],
       cardstyles: {
         height: "7vh",
@@ -2702,7 +2877,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-713af001] {\n  width: 100vw;\n  height: 100vh;\n  overflow: scroll;\n  font-family: \"Lato\", sans-serif;\n  overflow-x: scroll;\n}\n.text[data-v-713af001] {\n  color: dodgerblue;\n  text-align: center;\n  font-size: 20px;\n  margin-left: 20%;\n}\n.title1[data-v-713af001] {\n  color: #ef7d01;\n  font-weight: bold;\n  margin-left: 30px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-713af001] {\n  width: 100vw;\n  height: 100vh;\n  overflow: scroll;\n  font-family: \"Lato\", sans-serif;\n  overflow-x: scroll;\n}\n.text[data-v-713af001] {\n  color: dodgerblue;\n  text-align: center;\n  font-size: 20px;\n  margin-left: 20%;\n}\n.configuresets_button[data-v-713af001] {\n  border: 2px solid #0095d9;\n}\n.configuresets_button p[data-v-713af001] {\n  margin-top: 4%;\n  color: #0095d9 !important;\n}\n.title1[data-v-713af001] {\n  color: #ef7d01;\n  font-weight: bold;\n  margin-left: 30px;\n}\n.button p[data-v-713af001] {\n  font-size: 15px;\n  color: #707070;\n  text-transform: capitalize;\n  white-space: break-spaces;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2726,7 +2901,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-709e50f7] {\n  height: 100vh;\n  width: 100vw;\n}\n.summary[data-v-709e50f7] {\n  font-size: 4vh;\n  font-size: 4vw;\n  text-align: center;\n  color: #ef7d01;\n  font-weight: bolder;\n  font-family: system-ui;\n  letter-spacing: 0;\n  margin-top: 2%;\n}\n.category[data-v-709e50f7] {\n  width: 100%;\n  text-align: center;\n  position: absolute;\n  /* left: 40%; */\n  height: 100%;\n  /* right: 40%; */\n  font-size: larger;\n}\n.text[data-v-709e50f7] {\n  font-size: large;\n}\n.category h4[data-v-709e50f7] {\n  margin-top: 2vh;\n  font-weight: bold;\n  color: #444444;\n}\n.title[data-v-709e50f7] {\n  color: #ef7d01;\n  text-align: center;\n}\n.recommendation_button_text[data-v-709e50f7] {\n  text-transform: capitalize;\n  font-weight: 600;\n  font-size: 0.8rem;\n}\n.container[data-v-709e50f7] {\n  border: 2px solid black;\n  width: 70%;\n}\n.appbar-img[data-v-709e50f7] {\n  margin-top: 15px;\n  max-width: 120px;\n  width: 100%;\n}\n.editbutton[data-v-709e50f7] {\n  border: 1px solid #807f7f;\n}\n.editbutton h4[data-v-709e50f7] {\n  color: #707070;\n  font-size: 15px;\n  text-transform: capitalize;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-709e50f7] {\n  height: 100vh;\n  width: 100vw;\n}\n.summary[data-v-709e50f7] {\n  text-align: center;\n  color: #ef7d01;\n  font-weight: bolder;\n  font-family: system-ui;\n  letter-spacing: 0;\n  margin-top: 2%;\n  font-size: x-large;\n}\n.category[data-v-709e50f7] {\n  width: 100%;\n  text-align: center;\n  position: absolute;\n  /* left: 40%; */\n  height: 100%;\n  /* right: 40%; */\n  font-size: larger;\n}\n.text[data-v-709e50f7] {\n  font-size: large;\n}\n.category h4[data-v-709e50f7] {\n  margin-top: 2vh;\n  font-weight: bold;\n  color: #444444;\n  font-size: large;\n}\n.title[data-v-709e50f7] {\n  color: #ef7d01;\n  text-align: center;\n}\n.navigation_menu_items[data-v-709e50f7] {\n  color: #707070;\n}\n.recommendation_button_text[data-v-709e50f7] {\n  text-transform: capitalize;\n  font-weight: 600;\n  font-size: 0.8rem;\n}\n.container[data-v-709e50f7] {\n  width: 70%;\n@media screen and (min-width: 600px) and (max-width: 890) and (min-height: 900) {\n    width: 100%;\n}\n}\n.appbar-img[data-v-709e50f7] {\n  margin-top: 15px;\n  max-width: 120px;\n  width: 100%;\n}\n.editbutton[data-v-709e50f7] {\n  border: 1px solid #807f7f;\n}\n.editbutton h4[data-v-709e50f7] {\n  color: #707070;\n  font-size: 15px;\n  text-transform: capitalize;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4668,7 +4843,7 @@ var render = function() {
                                 [
                                   _c("v-icon", [
                                     _vm._v(
-                                      "\n                    " +
+                                      "\n                      " +
                                         _vm._s(
                                           _vm.show
                                             ? "mdi-chevron-up"
@@ -4701,17 +4876,104 @@ var render = function() {
                           },
                           [
                             _c(
-                              "v-btn",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    _vm.enablesecondstep()
-                                    _vm.show = !_vm.show
-                                    _vm.showground = !_vm.showground
+                              "div",
+                              { staticClass: "mx-4" },
+                              [
+                                _c("v-range-slider", {
+                                  staticClass: "align-center",
+                                  attrs: {
+                                    max: _vm.max,
+                                    min: _vm.min,
+                                    "hide-details": ""
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "prepend",
+                                      fn: function() {
+                                        return [
+                                          _c("v-text-field", {
+                                            staticClass: "mt-0 ml-2 pt-0",
+                                            staticStyle: { width: "50px" },
+                                            attrs: {
+                                              value: _vm.range[0],
+                                              "hide-details": "",
+                                              type: "number"
+                                            },
+                                            on: {
+                                              change: function($event) {
+                                                return _vm.$set(
+                                                  _vm.range,
+                                                  0,
+                                                  $event
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ]
+                                      },
+                                      proxy: true
+                                    },
+                                    {
+                                      key: "append",
+                                      fn: function() {
+                                        return [
+                                          _c("v-text-field", {
+                                            staticClass: "mt-0 ml-2 mr-2 pt-0",
+                                            staticStyle: { width: "50px" },
+                                            attrs: {
+                                              value: _vm.range[1],
+                                              "hide-details": "",
+                                              "double-line": "",
+                                              type: "number"
+                                            },
+                                            on: {
+                                              change: function($event) {
+                                                return _vm.$set(
+                                                  _vm.range,
+                                                  1,
+                                                  $event
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ]
+                                      },
+                                      proxy: true
+                                    }
+                                  ]),
+                                  model: {
+                                    value: _vm.range,
+                                    callback: function($$v) {
+                                      _vm.range = $$v
+                                    },
+                                    expression: "range"
                                   }
-                                }
-                              },
-                              [_vm._v("Next")]
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-card-actions",
+                              [
+                                _c("v-spacer"),
+                                _vm._v(" "),
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { flat: "", text: "", small: "" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.enablefourthstep()
+                                        _vm.show = !_vm.show
+                                        _vm.showfilters = !_vm.showfilters
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Next")]
+                                )
+                              ],
+                              1
                             )
                           ],
                           1
@@ -4755,7 +5017,7 @@ var render = function() {
                                 [
                                   _c("v-icon", [
                                     _vm._v(
-                                      "\n                    " +
+                                      "\n                      " +
                                         _vm._s(
                                           _vm.showground
                                             ? "mdi-chevron-up"
@@ -4773,22 +5035,94 @@ var render = function() {
                         1
                       ),
                       _vm._v(" "),
-                      _c("v-expand-transition", [
-                        _c(
-                          "div",
-                          {
-                            directives: [
-                              {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.showground,
-                                expression: "showground"
-                              }
-                            ]
-                          },
-                          [_vm._v("GROUND SPACE")]
-                        )
-                      ]),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.showground,
+                              expression: "showground"
+                            }
+                          ]
+                        },
+                        [
+                          _c(
+                            "v-expand-transition",
+                            [
+                              _vm._l(_vm.ground, function(space, index) {
+                                return _c(
+                                  "v-col",
+                                  { key: space.name, attrs: { cols: "3" } },
+                                  [
+                                    _c(
+                                      "v-card",
+                                      {
+                                        attrs: {
+                                          "active-class": "lightblue-text",
+                                          width: "300px",
+                                          flat: ""
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-card-actions",
+                                          [
+                                            _c("v-checkbox", {
+                                              attrs: { value: index },
+                                              model: {
+                                                value: _vm.ground,
+                                                callback: function($$v) {
+                                                  _vm.ground = $$v
+                                                },
+                                                expression: "ground"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c("v-img", {
+                                          attrs: {
+                                            src: space.img,
+                                            width: "100%"
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("v-card-subtitle", [
+                                          _vm._v(
+                                            "\n                      " +
+                                              _vm._s(space.name) +
+                                              "\n                    "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { small: "", text: "" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.enablethirdstep()
+                                    }
+                                  }
+                                },
+                                [_vm._v(" Next")]
+                              )
+                            ],
+                            2
+                          )
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c(
                         "v-card",
@@ -4827,7 +5161,7 @@ var render = function() {
                                 [
                                   _c("v-icon", [
                                     _vm._v(
-                                      "\n                    " +
+                                      "\n                      " +
                                         _vm._s(
                                           _vm.showpool
                                             ? "mdi-chevron-up"
@@ -4899,7 +5233,7 @@ var render = function() {
                                 [
                                   _c("v-icon", [
                                     _vm._v(
-                                      "\n                    " +
+                                      "\n                      " +
                                         _vm._s(
                                           _vm.showfilters
                                             ? "mdi-chevron-up"
@@ -4917,22 +5251,90 @@ var render = function() {
                         1
                       ),
                       _vm._v(" "),
-                      _c("v-expand-transition", [
-                        _c(
-                          "div",
-                          {
-                            directives: [
-                              {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.showfilters,
-                                expression: "showfilters"
-                              }
-                            ]
-                          },
-                          [_vm._v("Filter")]
-                        )
-                      ]),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.showfilters,
+                              expression: "showfilters"
+                            }
+                          ]
+                        },
+                        [
+                          _c(
+                            "v-expand-transition",
+                            [
+                              _c(
+                                "v-row",
+                                _vm._l(_vm.bundleProducts, function(
+                                  bundleProduct,
+                                  index
+                                ) {
+                                  return _c(
+                                    "v-col",
+                                    { key: index, attrs: { cols: "3" } },
+                                    [
+                                      _c(
+                                        "v-card",
+                                        {
+                                          attrs: {
+                                            "active-class": "lightblue-text",
+                                            width: "300px",
+                                            flat: ""
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "v-card-actions",
+                                            [
+                                              _c("v-checkbox", {
+                                                attrs: { value: index },
+                                                model: {
+                                                  value: _vm.filters,
+                                                  callback: function($$v) {
+                                                    _vm.filters = $$v
+                                                  },
+                                                  expression: "filters"
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-img", {
+                                            attrs: {
+                                              src: bundleProduct.base_product.media.split(
+                                                "~"
+                                              )[0],
+                                              width: "100%"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("v-card-subtitle", [
+                                            _vm._v(
+                                              _vm._s(
+                                                bundleProduct.base_product.price
+                                              )
+                                            )
+                                          ])
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                }),
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c(
                         "v-card",
@@ -4971,7 +5373,7 @@ var render = function() {
                                 [
                                   _c("v-icon", [
                                     _vm._v(
-                                      "\n                    " +
+                                      "\n                      " +
                                         _vm._s(
                                           _vm.showservice
                                             ? "mdi-chevron-up"
@@ -5009,236 +5411,315 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c("v-col", { attrs: { cols: "7" } }, [
-                    _c(
-                      "div",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.show,
-                            expression: "show"
-                          }
-                        ]
-                      },
-                      [_vm._v("budget slider")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.showground,
-                            expression: "showground"
-                          }
-                        ]
-                      },
-                      [
-                        _c("v-row", { staticClass: "mt-12 text--center" }, [
-                          _c("span", { staticClass: "text" }, [
-                            _vm._v(
-                              "Diese pools haben sich andere kunden angesehen:"
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "v-row",
-                          [
-                            _vm._l(_vm.bundleProducts, function(
-                              bundleProduct,
-                              index
-                            ) {
-                              return _c(
-                                "v-col",
-                                { key: index, attrs: { sm: "6", md: "4" } },
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "7" } },
+                    [
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.show,
+                              expression: "show"
+                            }
+                          ]
+                        },
+                        [
+                          _c(
+                            "v-row",
+                            {
+                              staticClass: "mt-12",
+                              attrs: { align: "center", justify: "center" }
+                            },
+                            [
+                              _c(
+                                "v-btn",
+                                { attrs: { icon: "", color: "#ef7d01" } },
                                 [
-                                  _c(
-                                    "v-card",
-                                    {
-                                      staticClass: "my-10",
-                                      attrs: {
-                                        height: "221",
-                                        width: "231",
-                                        outlined: ""
-                                      }
-                                    },
-                                    [
-                                      _c(
-                                        "v-card-actions",
-                                        [
-                                          _c("v-checkbox", {
-                                            attrs: { value: index },
-                                            on: {
-                                              change: function($event) {
-                                                return _vm.getSelectedBundleIndex(
-                                                  index
-                                                )
-                                              }
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c("v-img", {
-                                        attrs: {
-                                          src: bundleProduct.base_product.media.split(
-                                            "~"
-                                          )[0],
-                                          height: "118"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("v-card-title", [
-                                        _vm._v(
-                                          _vm._s(
-                                            bundleProduct.base_product.name
-                                          )
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("v-card-subtitle", [
-                                        _vm._v(
-                                          _vm._s(
-                                            bundleProduct.base_product.price
-                                          )
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  )
+                                  _c("v-icon", { attrs: { "x-large": "" } }, [
+                                    _vm._v(
+                                      "mdi-information\n\n                      "
+                                    )
+                                  ])
                                 ],
                                 1
                               )
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "v-btn",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    _vm.enablethirdstep()
-                                    _vm.showground = !_vm.showground
-                                    _vm.showpool = !_vm.showpool
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-row",
+                            { attrs: { align: "center", justify: "center" } },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass: "mt-4 button",
+                                  attrs: {
+                                    small: "",
+                                    depressed: "",
+                                    rounded: "",
+                                    color: "#efefef",
+                                    height: "60px"
                                   }
-                                }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "\n                      Bitte legen Sie ihr geplantes Budget fest, indem Sie die\n                      Schieberegler auf der linken Seite nutzen.\n                    "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: !_vm.show,
+                              expression: "!show"
+                            }
+                          ]
+                        },
+                        [
+                          _c("v-row", { staticClass: "mt-12 text--center" }, [
+                            _c("span", { staticClass: "text" }, [
+                              _vm._v(
+                                "Diese items haben sich andere kunden angesehen:"
+                              )
+                            ])
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-row",
+                        _vm._l(_vm.bundleProducts, function(
+                          bundleProduct,
+                          index
+                        ) {
+                          return _c(
+                            "v-col",
+                            { key: index, attrs: { sm: "6", md: "4" } },
+                            [
+                              _c(
+                                "v-card",
+                                {
+                                  staticClass: "my-10",
+                                  attrs: {
+                                    height: "221",
+                                    width: "200",
+                                    flat: ""
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c("v-checkbox", {
+                                        attrs: { value: index },
+                                        on: {
+                                          change: function($event) {
+                                            return _vm.getSelectedBundleIndex(
+                                              index
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-img", {
+                                    attrs: {
+                                      src: bundleProduct.base_product.media.split(
+                                        "~"
+                                      )[0],
+                                      width: "70%"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    { staticClass: "text--small" },
+                                    [
+                                      _vm._v(
+                                        _vm._s(bundleProduct.base_product.name)
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-card-subtitle", [
+                                    _vm._v(
+                                      _vm._s(bundleProduct.base_product.price)
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        }),
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-row",
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c("v-card-actions", [
+                            _c(
+                              "div",
+                              {
+                                directives: [
+                                  { name: "show", rawName: "v-show" }
+                                ]
                               },
                               [
-                                _vm._v(
-                                  "\n                  Next\n                "
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { small: "", text: "" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.enablefourthstep()
+                                        _vm.show = !_vm.show
+                                        _vm.showfilters = !_vm.showfilters
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                  Next\n                "
+                                    )
+                                  ]
                                 )
-                              ]
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.showfilters,
+                                    expression: "showfilters"
+                                  }
+                                ]
+                              },
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { small: "", text: "" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.enablefifthstep()
+                                        _vm.showfilters = !_vm.showfilters
+                                        _vm.showservice = !_vm.showservice
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                  Next\n                "
+                                    )
+                                  ]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.showservice,
+                                    expression: "showservice"
+                                  }
+                                ]
+                              },
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: {
+                                      small: "",
+                                      text: "",
+                                      to: "/summary"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                  Next\n                "
+                                    )
+                                  ]
+                                )
+                              ],
+                              1
                             )
-                          ],
-                          2
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.showpool,
-                            expression: "showpool"
-                          }
-                        ]
-                      },
-                      [
-                        _c("v-row", { staticClass: "mt-12 text--center" }, [
-                          _c("span", { staticClass: "text" }, [
-                            _vm._v("POOL DISPLAY:")
                           ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "v-btn",
-                          {
-                            on: {
-                              click: function($event) {
-                                _vm.enablefourthstep()
-                                _vm.showpool = !_vm.showpool
-                                _vm.showfilters = !_vm.showfilters
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-row",
+                        {
+                          staticClass: "mt-12",
+                          attrs: { align: "center", justify: "center" }
+                        },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "configuresets_button",
+                              attrs: { rounded: "", outlined: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.enablesecondstep()
+                                  _vm.showground = !_vm.showground
+                                  _vm.show = !_vm.show
+                                }
                               }
-                            }
-                          },
-                          [_vm._v("\n                NEXT\n              ")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.showfilters,
-                            expression: "showfilters"
-                          }
-                        ]
-                      },
-                      [
-                        _c("v-row", { staticClass: "mt-12 text--center" }, [
-                          _c("span", { staticClass: "text" }, [
-                            _vm._v("Filters Display")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "v-btn",
-                          {
-                            on: {
-                              click: function($event) {
-                                _vm.enablefifthstep()
-                                _vm.showfilters = !_vm.showfilters
-                                _vm.showservice = !_vm.showservice
-                              }
-                            }
-                          },
-                          [_vm._v("\n                NEXT\n              ")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.showservice,
-                            expression: "showservice"
-                          }
-                        ]
-                      },
-                      [
-                        _c("v-row", { staticClass: "mt-12 text--center" }, [
-                          _c("span", { staticClass: "text" }, [
-                            _vm._v("SERVICE Display")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("v-btn", { attrs: { to: "/summary" } }, [
-                          _vm._v(" NEXT")
-                        ])
-                      ],
-                      1
-                    )
-                  ])
+                            },
+                            [
+                              _c("v-icon", { attrs: { color: "#0095d9" } }, [
+                                _vm._v("mdi-format-list-bulleted")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [_vm._v("  eigenes Set erstellen ")])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
                 ],
                 1
               )
@@ -5330,6 +5811,22 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
+                { staticClass: "hidden-md-and-up" },
+                [
+                  _c("v-app-bar-nav-icon", {
+                    on: {
+                      click: function($event) {
+                        $event.stopPropagation()
+                        _vm.drawer = !_vm.drawer
+                      }
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
                 { staticClass: "hidden-sm-and-down" },
                 [
                   _c(
@@ -5380,6 +5877,50 @@ var render = function() {
                     1
                   )
                 ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-navigation-drawer",
+            {
+              attrs: {
+                color: "#efefef",
+                right: "",
+                temporary: "",
+                absolute: ""
+              },
+              model: {
+                value: _vm.drawer,
+                callback: function($$v) {
+                  _vm.drawer = $$v
+                },
+                expression: "drawer"
+              }
+            },
+            [
+              _c(
+                "v-list",
+                _vm._l(_vm.items, function(item) {
+                  return _c(
+                    "v-list-item",
+                    { key: item.title, attrs: { to: item.link, link: "" } },
+                    [
+                      _c(
+                        "v-icon",
+                        { attrs: { medium: "", color: "#ef7d01" } },
+                        [_vm._v(" " + _vm._s(item.icon))]
+                      ),
+                      _vm._v(" "),
+                      _c("h4", { staticClass: "navigation_menu_items" }, [
+                        _vm._v(_vm._s(item.title))
+                      ])
+                    ],
+                    1
+                  )
+                }),
                 1
               )
             ],
@@ -5478,7 +6019,7 @@ var render = function() {
                               [
                                 _c("v-card-text", { staticClass: "text" }, [
                                   _vm._v(
-                                    "\n                Category 1 item description Lorem ipsum dolor sit, amet\n                consectetur adipisicing elit. Asperiores consequatur deleniti\n                facere sint molestiae ducimus non quasi excepturi et!\n                Mollitia, illo? Culpa dignissimos, voluptatum incidunt\n                pariatur amet minus dolorum harum.\n              "
+                                    "\n                Category 1 item description Lorem ipsum dolor sit, amet\n                consectetur adipisicing elit. Asperiores consequatur deleniti\n                facere sint molestiae ducimus non quasi excepturi et!\n                Mollitia, illo? Culpa dignissimos, voluptatum incidunt\n                pariatur amet minus dolorum harum. Lorem ipsum, dolor sit amet\n                consectetur adipisicing elit. Accusantium nostrum officiis\n                fugit, distinctio exercitationem mollitia sunt, porro officia\n                itaque tempora recusandae enim architecto vitae earum\n                perspiciatis? Dolorem atque quia sapiente?\n              "
                                   )
                                 ])
                               ],
