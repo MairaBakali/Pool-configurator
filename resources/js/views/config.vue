@@ -55,7 +55,6 @@
               </v-card>
               <v-expand-transition>
                 <div v-show="show">
-                  Budget
                   <v-btn
                     @click="
                       enablesecondstep();
